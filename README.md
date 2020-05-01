@@ -61,8 +61,8 @@ $ ls #/data/data/com.termux/files/home дефолтный/домашний ка�
 $ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git
 $ pip install --upgrade pip
 
-# Клонировать репозиторий Snoop и перейти в ветку Snoop/Termux
-$ git clone https://github.com/snooppr/snoop -b termux
+# Клонировать репозиторий
+$ git clone https://github.com/snooppr/snoop
 # (Если флешкa FAT (ни ext4), в таком случае,
 # клонировать репозиторий только в ДОМАШНЮЮ директорию Termux)
 
@@ -89,7 +89,7 @@ usage: snoop.py [-h] [--donate Y] [--sort Y] [--version] [--verbose] [--json]
                 [--list all] [--country] [--update Y]
                 USERNAMES [USERNAMES ...]
 
-Snoop: поиск никнейма по всем фронтам! (Version 1.1.9_rus Ветка Snoop Desktop)
+Snoop: поиск никнейма по всем фронтам! (Version 1.1.9_rus (source))
 
 positional arguments:
   USERNAMES             Никнейм разыскиваемого пользователя, поддерживается
@@ -158,7 +158,7 @@ $ python3 snoop.py -с -t 9 -f -u ~/file.txt start
 ```
 # Обновляйте Snoop для поддержки ПО и БД в актуальном состоянии:
 $ python3 snoop.py --update Y
-[^1]: Требуется установка и лёгкая "настройка" Git.
+[^1]: Требуется установка Git.
 ```
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
