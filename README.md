@@ -1,4 +1,4 @@
-Ветка  master (Snoop Desktop)
+Snoop Project
 =============================
 
 ## Snoop Project один из самых перспективных OSINT-инструментов по поиску никнеймов.
@@ -23,12 +23,13 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 
 [database 1️⃣0️⃣3️⃣7⃣⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
-## Snoop for OS Windows and GNU/Linux (release)
+## Snoop for OS Windows and GNU/Linux  
+**Release**  
 snoop.exe and snoop
 https://github.com/snooppr/snoop/releases
 
-## Installation (source code)
-**Примечание**: Требуемая версия python 3.7 и выше.
+**Native Installation**  
+Примечание: Требуемая версия python 3.7 и выше.
 
 ```
 # Клонировать репозиторий
@@ -47,7 +48,8 @@ $ python3 -m pip install -r requirements.txt
 $ pip3 install module
 ```
 ## Snoop for Android
-# Installation (source code)
+**Native Installation**  
+
 Установить [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en "Google Play")  
 ```
 # Войти в домашнюю папку Termux (т.е. просто открыть Termux)
@@ -164,7 +166,9 @@ $ python3 snoop.py --update Y
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />
-## Основные ошибки
+
+## Основные ошибки  
+
 |  Сторона  |                         Проблема                      | Решение |
 |:---------:| ------------------------------------------------------|:-------:|
 | ========= |=======================================================| ======= |

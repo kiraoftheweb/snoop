@@ -51,7 +51,7 @@ else:
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-__version__ = "1.1.9_rus Ветка Snoop Desktop"
+__version__ = "1.1.9_rus Snoop (source)"
 
 dirresults = os.getcwd()
 timestart = time.time()
