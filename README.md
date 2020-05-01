@@ -32,7 +32,7 @@ snoop.exe and snoop
 https://github.com/snooppr/snoop/releases
 
 
-## Using in docker
+## Using in docker (macOS)
 
 ```bash
 # Клонировать репозиторий
@@ -48,7 +48,7 @@ $ docker-compose run --rm snoop <опции>
 В директории `results` (если не указана иная) появятся результаты работы, в директорию `inputs` можно класть файлы с входными данными. Директория `results` примонтирована в `/app/results` внутри контейнера, директория `inputs` в `/app/inputs`. Исполняемый файл запущен в директории `/app/` внутри контейнера, соотвественно `inputs` и `results`  - это путь к директориям относитьльно исполняемого файла.
 
 
-## Native installation
+## Native installation (GNU/Linux analog Windows)
 **Примечание**: Требуемая версия python 3.7 и выше.
 
 ```
