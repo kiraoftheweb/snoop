@@ -17,21 +17,17 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | GNU/Linux             |     ✅    |
 | Windows 7/10 (32/64)  |     ✅    |
 | Android/Termux/Andrax |     ✅    |
-| macOS                 |     🚫    |
+| macOS                 |    ❓    |
 | IOS                   |     🚫    |
 | WSL                   |     🚫    |
 
-[database 1️⃣0️⃣3️⃣7⃣⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")
+[database 1️⃣0️⃣3️⃣7⃣⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
-## Snoop for Android
-Смотри ветку Termux
-https://github.com/snooppr/snoop/tree/termux
-
-## Snoop for OS Windows and GNU/Linux
+## Snoop for OS Windows and GNU/Linux (release)
 snoop.exe and snoop
 https://github.com/snooppr/snoop/releases
 
-## Installation
+## Installation (source code)
 **Примечание**: Требуемая версия python 3.7 и выше.
 
 ```
@@ -50,7 +46,38 @@ $ python3 -m pip install -r requirements.txt
 # Либо установить все зависимости из 'requirements.txt' в ручную через
 $ pip3 install module
 ```
+## Snoop for Android
+# Installation (source code)
+Установить [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en "Google Play")  
+```
+# Войти в домашнюю папку Termux (т.е. просто открыть Termux)
+$ termux-setup-storage
+$ ls #/data/data/com.termux/files/home дефолтный/домашний каталог
 
+# Установить python3 и зависимости
+# Примечание: установка продолжительная по времени
+$ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git
+$ pip install --upgrade pip
+
+# Клонировать репозиторий Snoop и перейти в ветку Snoop/Termux
+$ git clone https://github.com/snooppr/snoop -b termux
+# (Если флешкa FAT (ни ext4), в таком случае,
+# клонировать репозиторий только в ДОМАШНЮЮ директорию Termux)
+
+# Войти в рабочий каталог Snoop
+$ cd ~/snoop
+# Установить зависимости 'requirements'
+$ python3 -m pip install -r requirements.txt
+
+
+# Дополнение для устаревших гаджетов (Android 6)
+# Примечание на современных гаджетах пакеты уже предустановлены и настроены
+# добавьте любое 'рандомное' имя и почту [^1]:
+$ git config --global user.email "you@example.com"
+$ git config --global user.name "username"
+# Установите coreutils
+$ pkg install coreutils
+```
 ## Using
 ```
 $ python3 snoop.py --help
@@ -132,8 +159,11 @@ $ python3 snoop.py --update Y
 [^1]: Требуется установка и лёгкая "настройка" Git.
 ```
 
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />
+
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />
 ## Основные ошибки
 |  Сторона  |                         Проблема                      | Решение |
 |:---------:| ------------------------------------------------------|:-------:|

@@ -63,17 +63,17 @@ try:
     os.makedirs(str(dirresults + "/results"))
 except:
     pass
-try:    
+try:
     os.mkdir(str(dirresults + "/results/html"))
-except:        
+except:
     pass
-try:    
+try: 
     os.mkdir(str(dirresults + "/results/txt"))
-except:            
+except:
     pass
-try:    
+try:
     os.mkdir(str(dirresults + "/results/csv"))
-except:            
+except:
     pass
 
 ################################################################################
@@ -102,7 +102,10 @@ def print_error(err, errstr, var, verbose=False, color=True):
             Fore.CYAN + "]" +
             Style.BRIGHT + Fore.RED + f" {errstr}" +
             Style.BRIGHT + Fore.YELLOW + f" {err if verbose else var}")
-        playsound('err.wav')
+        try:
+            playsound('err.wav')
+        except:
+        	pass
     else:
         print(f"[-] {errstr} {err if verbose else var}")
 
@@ -1331,7 +1334,9 @@ def main():
         if exists_counter >= 1:
             webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))
 # Музыка.
-        playsound('end.wav')
-
+        try:
+            playsound('end.wav')
+        except:
+        	pass
 if __name__ == "__main__":
     main()
