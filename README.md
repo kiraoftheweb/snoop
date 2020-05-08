@@ -17,11 +17,11 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | GNU/Linux             |     ✅    |
 | Windows 7/10 (32/64)  |     ✅    |
 | Android/Termux/Andrax |     ✅    |
-| macOS                 |     ❓    |
+| macOS                 |     ❗️    |
 | IOS                   |     🚫    |
 | WSL                   |     🚫    |
 
-[database 1️⃣0️⃣3️⃣7⃣⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[database 1️⃣0️⃣3️⃣5️⃣ ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Snoop for OS Windows and GNU/Linux  
 **Release**  
@@ -29,7 +29,7 @@ snoop.exe and snoop
 https://github.com/snooppr/snoop/releases
 
 **Native Installation**  
-Примечание: Требуемая версия python 3.7 и выше.
+Примечание: Требуемая версия python 3.6 и выше.
 
 ```
 # Клонировать репозиторий
@@ -46,6 +46,8 @@ $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # Либо установить все зависимости из 'requirements.txt' в ручную через
 $ pip3 install module
+# Если вместо флагов стран отображаются спецсимволы, доставить пакет шрифта, например монохромный
+$ apt-get install ttf-ancient-fonts или цветной $ apt-get install fonts-noto-color-emoji
 ```
 ## Snoop for Android
 **Native Installation**  

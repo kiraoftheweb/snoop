@@ -358,7 +358,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                 else:
                     print_found_country(social_network, url, countryA, response_time, verbose, color)
                 exists = "найден!"
-
+#            print(r.text) #Проверка ответа
 # Проверка, 4 метода; #2.
 # Проверка username при статусе 301 и 303 (перенаправление и соль).
         elif error_type == "redirection":
@@ -406,7 +406,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # Если все 4 метода не сработали, например, из-за ошибки доступа.
         else:
             if not print_found_only:
-                print_invalid(social_network, "*Пропуск", color)
+                print_invalid(social_network, "*ПРОПУСК", color)
             exists = "блок"
 
 # Считать тайминги приближенно.
