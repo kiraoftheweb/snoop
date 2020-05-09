@@ -49,6 +49,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
   },
+  "Bdoforumtr": {
+    "country": "\ud83c\uddf9\ud83c\uddf7",
+    "country_klas": "TR",
+    "errorMsg": "Belirtilen \u00fcye bulunamad\u0131. L\u00fctfen bir \u00fcyenin tam ad\u0131n\u0131 giriniz.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.bdoforumtr.com/uye/?username={}",
+    "urlMain": "https://www.bdoforumtr.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "blue"
+  },
   "Bittube": {
     "country": "\ud83c\udff4",
     "errоrTypе": "response_url",
