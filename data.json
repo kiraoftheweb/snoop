@@ -613,6 +613,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
   },
+  "Appearoo": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorUrl": "http://appearoo.com/{}",
+    "errоrTypе": "response_url",
+    "url": "http://appearoo.com/{}",
+    "urlMain": "http://appearoo.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "appearoo"
+  },
   "AppleDeveloper": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -1895,6 +1905,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
   },
+  "Ddo": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>Dungeons & Dragons Online Forums</title",
+    "errоrTypе": "message",
+    "url": "https://www.ddo.com/forums/member.php/?username={}",
+    "urlMain": "https://www.ddo.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
+  },
   "Defendtheweb": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -2063,6 +2084,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Diigo": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "{}",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.diigo.com/interact_api/load_profile_info?name={}",
+    "urlMain": "https://www.diigo.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "markmark"
+  },
   "Dinsk": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -2229,6 +2261,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Droners": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorUrl": "https://droners.io",
+    "errоrTypе": "response_url",
+    "url": "https://droners.io/accounts/{}/",
+    "urlMain": "https://droners.io",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Dslreports": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -2337,6 +2379,18 @@
     "urlMain": "https://www.edocr.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Eightbit": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "<title>EightBit: 404 Error</title>",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "http://eightbit.me/{}",
+    "urlMain": "http://eightbit.me/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Jerrymej"
   },
   "Eintracht": {
     "country": "\ud83c\udde9\ud83c\uddea",
@@ -6969,6 +7023,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Patientslikeme": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorUrl": "https://www.patientslikeme.com/{}",
+    "errоrTypе": "response_url",
+    "url": "https://www.patientslikeme.com/members/{}",
+    "urlMain": "https://www.patientslikeme.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "fabu007"
+  },
   "Patreon": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -8930,6 +8994,15 @@
     "urlMain": "https://studwork.org/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "tmm22"
+  },
+  "Stunited": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "http://stunited.org/profile/{}",
+    "urlMain": "http://stunited.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "mani-vel"
   },
   "Subeta": {
     "country": "\ud83c\uddfa\ud83c\uddf8",

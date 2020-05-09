@@ -41,13 +41,13 @@ if sys.platform == 'win32':
 	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
 	print (Fore.CYAN + " cd с:\snoop" + Style.RESET_ALL)	
 	print (Fore.CYAN + " python snoop.py -h" + Style.RESET_ALL, "#справка 'как начать'")
-	print (Fore.CYAN + " python snoop.py -t 9 username" + Style.RESET_ALL, "#поиск user-a")
+	print (Fore.CYAN + " python snoop.py username" + Style.RESET_ALL, "#поиск user-a")
 	print (Fore.CYAN + "============================================\n" + Style.RESET_ALL)
 else:
 	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
 	print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
 	print (Fore.CYAN + " python3 snoop.py -h" + Style.RESET_ALL, "#справка по функциям ПО")
-	print (Fore.CYAN + " python3 snoop.py -t 9 username" + Style.RESET_ALL, "#поиск user-a")
+	print (Fore.CYAN + " python3 snoop.py username" + Style.RESET_ALL, "#поиск user-a")
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
@@ -105,7 +105,7 @@ def print_error(err, errstr, var, verbose=False, color=True):
         try:
             playsound('err.wav')
         except:
-        	pass
+            pass
     else:
         print(f"[-] {errstr} {err if verbose else var}")
 
@@ -575,12 +575,12 @@ def main():
                         )
     parser.add_argument("--time", "-t 9",
                         action="store", metavar='',
-                        dest="timeout", type=timeout_check, default=None,
+                        dest="timeout", type=timeout_check, default=9,
                         help="Установить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
                              "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки:'"
-                             "Оптимальное значение при хорошем интернет соединении = 9с.\n"
-                             "\033[31;1mВкл. эту опцию необходимо практически всегда\033[0m, \
-                              чтобы избежать длительных зависаний при Internet Censorship"
+                             "\033[31;1mВкл. эту опцию необходимо практически всегда при медленном \
+                             интернет соединении\033[0m, чтобы избежать длительных зависаний \
+                             при Internet Censorship (по умолчанию значение выставлено 9с)" 
                         )
     parser.add_argument("--found-print", "-f", 
                         action="store_true", dest="print_found_only", default=False,
@@ -620,10 +620,11 @@ def main():
 
     if args.no_func:
         print(Fore.CYAN + "[+] активирована опция '-n': «отключены:: цвета; звук; флаги; браузер»")
-
-    if args.timeout:
-        print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от сайта \033[36;1m<= {timeout}_sec\033[0m\033[36m.» \033[0m")
-
+    try:
+        if args.timeout:
+            print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от сайта \033[36;1m<= {timeout}_sec\033[0m\033[36m.» \033[0m")
+    except:
+        pass
     if args.verbose:
         print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»")
 
@@ -1347,6 +1348,6 @@ def main():
         try:
             playsound('end.wav')
         except:
-        	pass
+            pass
 if __name__ == "__main__":
     main()
