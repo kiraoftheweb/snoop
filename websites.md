@@ -1,4 +1,4 @@
-## Snoop БД поддерживаемых сайтов (список), всего — 1058 сайт(ов)!
+## Snoop БД поддерживаемых сайтов (список), всего — 1059 сайт(ов)!
 1. 🇷🇺 [0k_clan](http://0k.clan.su)
 2. 🏁 [11x2](https://11x2.com)
 3. 🏁 [1337x](https://1337x.to)
@@ -66,7 +66,7 @@
 65. 🇵🇹 [Aptoide](https://en.aptoide.com/)
 66. 🇷🇺 [Aqa](https://www.aqa.ru/)
 67. 🇷🇺 [ArcheageRU](https://aa.mail.ru)
-68. 🇺🇸 [ArchiveORG](https://archive.org)
+68. 🌎 [ArchiveORG](https://archive.org)
 69. 🇺🇸 [Archiveofourown](https://archiveofourown.org)
 70. 🇷🇺 [Archlinux](https://archlinux.org.ru)
 71. 🇷🇺 [Arhrock](https://arhrock.info/)
@@ -1057,3 +1057,4 @@
 1056. 🇨🇳 [Zhihu](https://www.zhihu.com/)
 1057. 🇷🇺 [Zhyk](https://zhyk.ru)
 1058. 🌎 [Zomato](https://www.zomato.com)
+1059. 🇷🇺 [loveplanet](https://loveplanet.ru)
