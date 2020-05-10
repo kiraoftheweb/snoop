@@ -5165,6 +5165,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Itforums": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "redirection",
+    "url": "https://itforums.ru/members/?username={}",
+    "urlMain": "https://itforums.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Jer_forum24": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -7107,8 +7116,8 @@
     "usernameON": "fabu007"
   },
   "Patreon": {
-    "country": "\ud83c\uddfa\ud83c\uddf8",
-    "country_klas": "US",
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.patreon.com/{}",
     "urlMain": "https://www.patreon.com/",
