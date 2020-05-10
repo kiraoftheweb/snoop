@@ -1057,4 +1057,4 @@
 1056. 🇨🇳 [Zhihu](https://www.zhihu.com/)
 1057. 🇷🇺 [Zhyk](https://zhyk.ru)
 1058. 🌎 [Zomato](https://www.zomato.com)
-1059. 🇷🇺 [loveplanet](https://loveplanet.ru)
+1059. 🇷🇺 [Loveplanet](https://loveplanet.ru)
