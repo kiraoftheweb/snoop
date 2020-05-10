@@ -4,7 +4,7 @@
 3. 🏴 [AngelList](https://angel.co/)
 4. 🏴 [Basecamp](https://basecamp.com/)
 5. 🏴 [Bbiz_club](https://bbiz.club)
-6. 🇹🇷 [Bdoforumtr](https://www.bdoforumtr.com)
+6. 🏴 [Bdoforumtr](https://www.bdoforumtr.com)
 7. 🏴 [Bittube](https://bittube.tv)
 8. 🏴 [BlackPlanet](http://blackplanet.com/)
 9. 🏴 [Boingboing.net](https://boingboing.net/)

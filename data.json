@@ -53,6 +53,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "24open": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://24open.ru/groups/dating/diary/user/{}/",
+    "urlMain": "https://24open.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "2Dimensions": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -1504,6 +1513,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam "
   },
+  "Chpoking": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorUrl": "http://chpoking.ru/{}",
+    "errоrTypе": "response_url",
+    "url": "http://chpoking.ru/{}/",
+    "urlMain": "http://chpoking.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Cloob": {
     "country": "\ud83c\uddee\ud83c\uddf7",
     "country_klas": "IR",
@@ -1532,6 +1551,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "green"
   },
+  "Club_7ya": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://club.7ya.ru/{}/",
+    "urlMain": "https://club.7ya.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Club_cnews": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -1552,6 +1580,15 @@
     "urlMain": "https://cmet4uk.ru",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "vladnik"
+  },
+  "Codeby": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "redirection",
+    "url": "https://codeby.net/members/?username={}",
+    "urlMain": "https://codeby.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
   },
   "Codecademy": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -2524,6 +2561,15 @@
     "urlMain": "https://www.eyeem.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "F-droid": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://forum.f-droid.org/u/{}/summary",
+    "urlMain": "https://forum.f-droid.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
   },
   "F3_cool": {
     "country": "\ud83c\uddf1\ud83c\uddfb",
@@ -4321,6 +4367,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
   },
+  "Golbis": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://golbis.com/user/{}/",
+    "urlMain": "https://golbis.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Goldderby": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -5375,6 +5430,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Kwest": {
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "FR",
+    "errоrTypе": "status_code",
+    "url": "https://kwest.com/{}",
+    "urlMain": "https://kwest.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Kwork": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -6069,6 +6133,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Mirtesen": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0417\u0434\u0435\u0441\u044c \u043f\u043e\u043a\u0430 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435\u0442",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://mirtesen.ru/people/{}/profile",
+    "urlMain": "https://mirtesen.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Mix": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -6472,6 +6547,15 @@
     "errоrTypе": "redirection",
     "url": "https://www.nationalgunforum.com/members/?username={}",
     "urlMain": "https://www.nationalgunforum.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Neendo": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://www.meendo.net/profile/{}",
+    "urlMain": "https://www.meendo.net",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -7234,6 +7318,15 @@
     "urlMain": "https://www.pinkbike.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Pinme": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://www.pinme.ru/u/{}/",
+    "urlMain": "https://www.pinme.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Pinterest": {
     "country": "\ud83c\udf0e",
@@ -9697,6 +9790,18 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Ucoz": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "https://forum.ucoz.ru/index/8-0-{}",
+    "urlMain": "https://forum.ucoz.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
+  },
   "Udemy": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -9915,6 +10020,16 @@
     "urlMain": "http://www.vkovk.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Vkrugudruzei": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorUrl": "http://vkrugudruzei.ru/{}",
+    "errоrTypе": "response_url",
+    "url": "http://{}.vkrugudruzei.ru/x/blog/all/",
+    "urlMain": "http://vkrugudruzei.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "irina"
   },
   "Vlmi": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -10447,6 +10562,17 @@
     "urlMain": "https://www.yummly.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Zapravdu": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e.",
+    "errorMsg2": "<title>\u0417\u0430 \u041f\u0440\u0430\u0432\u0434\u0443! - \u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f</title>",
+    "errоrTypе": "message",
+    "url": "http://zapravdu.ru/forum/search.php?author={}",
+    "urlMain": "http://zapravdu.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "ccsr"
   },
   "Zenitbol": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
