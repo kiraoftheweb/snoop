@@ -7,6 +7,7 @@ import json
 import locale
 import os
 import platform
+import random
 import re
 import requests
 import sorting
@@ -34,7 +35,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.\033[34;1m1.9\033[31;1m_rus\033[0m
+                         _|    \033[0m \033[37mv1.\033[34;1m2.0\033[31;1m_rus\033[0m
 """)
 
 if sys.platform == 'win32':
@@ -51,7 +52,7 @@ else:
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-__version__ = "1.1.9_rus Snoop (source)"
+__version__ = "1.2.0_rus Snoop (source)"
 
 dirresults = os.getcwd()
 timestart = time.time()
@@ -73,6 +74,10 @@ except:
     pass
 try:
     os.mkdir(str(dirresults + "/results/csv"))
+except:
+    pass
+try:
+    os.makedirs(str(dirresults + "/results/save reports"))
 except:
     pass
 
@@ -170,11 +175,10 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
         print_error(err, "Ошибка раскладки\nклавиатуры/*символов", social_network, verbose, color)
     return None, "", -1
 
-
-def snoop(username, site_data, verbose=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
+def snoop(username, site_data, verbose=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
     username = re.sub(" ", "%20", username)
 
-# Предотвращение DDoS из-за невалидных логинов: номеров телефонов.
+# Предотвращение 'DDoS' из-за невалидных логинов; номеров телефонов.
     ermail=[]
     with open('domainlist.txt') as err:
         for line in err.readlines():
@@ -235,10 +239,15 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         results_site['url_main'] = net_info.get("urlMain")
 
 # Пользовательский user-agent браузера, некоторые сайты от этого зависят напрямую.
-# Временно поставил самый популярный, чтобы не думали, что запросы идут от ботов.
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
-        }
+# Чтобы не думали, что запросы идут от ботов.
+
+        RandHead = (["{'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'}",
+        "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'}",
+        "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 OPR/60.0.3255.109'}",
+        "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0'}"
+        ])
+        RH = random.choice(RandHead)
+        headers = json.loads(RH.replace("'",'"'))
 
         if "headers" in net_info:
 # Переопределить / добавить любые дополнительные заголовки, необходимые для данного сайта.
@@ -273,10 +282,13 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                 url_probe = url_probe.format(username)
 
 # Если нужен только статус кода, не загружать код страницы.
-            if net_info["errоrTypе"] == 'status_code':
-                request_method = session.head
-            else:
+            if reports:
                 request_method = session.get
+            else:
+                if net_info["errоrTypе"] == 'status_code' or net_info["errоrTypе"] == "redirection":
+                    request_method = session.head
+                else:
+                    request_method = session.get
 
             if net_info["errоrTypе"] == "response_url":
 # Сайт перенаправляет запрос на другой URL, если имя пользователя не существует.
@@ -339,7 +351,16 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         except:
             pass
 
-# Проверка, 4 метода; #1.
+# Сохранение отчетов опция (-S)
+        def sreports():
+            try:
+                os.makedirs(str(dirresults + f"/results/save reports/{username}"))
+            except:
+                pass
+            with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding="utf8") as rep:
+                rep.write(r.text)
+
+# Проверка, 4 методов; #1.
 # Ответы message (разные локации).
         if error_type == "message":
             error = net_info.get("errorMsg") 
@@ -358,23 +379,28 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                 else:
                     print_found_country(social_network, url, countryA, response_time, verbose, color)
                 exists = "найден!"
+                if reports:
+                    sreports()
 #            print(r.text) #Проверка ответа
-# Проверка, 4 метода; #2.
+# Проверка, 4 методов; #2.
 # Проверка username при статусе 301 и 303 (перенаправление и соль).
         elif error_type == "redirection":
             rr = requests.get(url, allow_redirects=False)
             if rr.status_code == 301 or rr.status_code == 303:
+#                print(r.text) #проверка ответа (+- '-S')
                 if sys.platform == 'win32':
                     print_found_country(social_network, url, countryB, response_time, verbose, color)
                 else:
                     print_found_country(social_network, url, countryA, response_time, verbose, color)
+                if reports:
+                    sreports()
                 exists = "найден!"
             else:
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
                 exists = "увы"
 
-# Проверка, 4 метода; #3.
+# Проверка, 4 методов; #3.
 # Проверяет, является ли код состояния ответа 2..
         elif error_type == "status_code":
             if not r.status_code >= 300 or r.status_code < 200:
@@ -382,13 +408,15 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                     print_found_country(social_network, url, countryB, response_time, verbose, color)
                 else:
                     print_found_country(social_network, url, countryA, response_time, verbose, color)
+                if reports:
+                    sreports()
                 exists = "найден!"
             else:
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
                 exists = "увы"
 
-# Проверка, 4 метода; #4
+# Проверка, 4 методов; #4
 # Перенаправление.
         elif error_type == "response_url":
 
@@ -397,11 +425,14 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                     print_found_country(social_network, url, countryB, response_time, verbose, color)
                 else:
                     print_found_country(social_network, url, countryA, response_time, verbose, color)
+                if reports:
+                    sreports()
                 exists = "найден!"
             else:
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
                 exists = "увы"
+#            print(r.text) #Проверка ответа
 
 # Если все 4 метода не сработали, например, из-за ошибки доступа.
         else:
@@ -546,11 +577,11 @@ def main():
                             description=f"{module_name} (Version {__version__})",
                             epilog=(f"\033[36mSnoop поддержка: \033[36;1m{flagBS}\033[0m \033[36mWebsites!!!\033[0m\n\n{donate} ")
                             )
-    parser.add_argument("--donate Y", "-d Y",
+    parser.add_argument("--donate y", "-d y",
                         action="store_true", dest="donation",
                         help="Пожертвовать на развитие Snoop project-а"
                         )
-    parser.add_argument("--sort Y",
+    parser.add_argument("--sort y",
                         action="store_true", dest="sort", default=False,
                         help="Обновление/сортировка черного и белого списков (.json) сайтов БД Snoop.\n"
                              "Если вы не разработчик, не используйте эту опцию"
@@ -573,7 +604,7 @@ def main():
                         dest="site_list",  default=None, 
                         help="Указать имя сайта из БС '--list all'. Поиск 'username' на одном указанном ресурсе"
                         )
-    parser.add_argument("--time", "-t 9",
+    parser.add_argument("--time", "-t 11",
                         action="store", metavar='',
                         dest="timeout", type=timeout_check, default=9,
                         help="Установить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
@@ -611,12 +642,20 @@ def main():
                         action="store_true", dest="country", default=False,
                         help="Сортировка 'вывода на печать/запись_результатов' по странам, а не по алфавиту"
                         )                        
-    parser.add_argument("--update Y",
+    parser.add_argument("--save-report", "-S",
+                        action="store_true", dest="reports", default=False,
+                        help="Сохранять найденные странички пользователей в локальные файлы"
+                        )
+    parser.add_argument("--update y",
                         action="store_true", dest="update",
                         help="Обновить Snoop"
-                        )   
+                        )
 
     args = parser.parse_args()
+
+# Информативный вывод '-S'.
+    if args.reports:
+        print(Fore.CYAN + "[+] активирована опция '-S': «сохранять странички найденных аккаунтов»")
 
     if args.no_func:
         print(Fore.CYAN + "[+] активирована опция '-n': «отключены:: цвета; звук; флаги; браузер»")
@@ -953,6 +992,7 @@ def main():
                                    country=args.country,
                                    user=args.user,
                                    verbose=args.verbose,
+                                   reports=args.reports,
                                    print_found_only=args.print_found_only,
                                    timeout=args.timeout,
                                    color=not args.no_func)
@@ -962,6 +1002,7 @@ def main():
                                    country=args.country,
                                    user=args.user,
                                    verbose=args.verbose,
+                                   reports=args.reports,
                                    print_found_only=args.print_found_only,
                                    timeout=args.timeout,
                                    color=not args.no_func)
@@ -971,6 +1012,7 @@ def main():
                                country=args.country,
                                user=args.user,
                                verbose=args.verbose,
+                               reports=args.reports,
                                print_found_only=args.print_found_only,
                                timeout=args.timeout,
                                color=not args.no_func)
@@ -1155,6 +1197,7 @@ def main():
                                    country=args.country,
                                    user=args.user,
                                    verbose=args.verbose,
+                                   reports=args.reports,
                                    print_found_only=args.print_found_only,
                                    timeout=args.timeout,
                                    color=not args.no_func)
@@ -1164,6 +1207,7 @@ def main():
                                    country=args.country,
                                    user=args.user,
                                    verbose=args.verbose,
+                                   reports=args.reports,
                                    print_found_only=args.print_found_only,
                                    timeout=args.timeout,
                                    color=not args.no_func)
@@ -1173,6 +1217,7 @@ def main():
                                country=args.country,
                                user=args.user,
                                verbose=args.verbose,
+                               reports=args.reports,
                                print_found_only=args.print_found_only,
                                timeout=args.timeout,
                                color=not args.no_func)

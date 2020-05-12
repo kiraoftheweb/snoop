@@ -29,6 +29,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Animeleague": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>Animeleague</title>",
+    "errоrTypе": "message",
+    "url": "https://www.animeleague.net/forum/member.php?username={}",
+    "urlMain": "https://www.animeleague.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Basecamp": {
     "country": "\ud83c\udff4",
     "errorMsg": "The account you were looking for doesn't exist",
@@ -151,6 +162,15 @@
     "urlMain": "https://cash.me/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "Jenny"
+  },
+  "ColourLovers": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://www.colourlovers.com/lover/{}",
+    "urlMain": "https://www.colourlovers.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "blue"
   },
   "Community_progress": {
     "country": "\ud83c\udff4",
