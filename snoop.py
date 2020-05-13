@@ -357,7 +357,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
                 os.makedirs(str(dirresults + f"/results/save reports/{username}"))
             except:
                 pass
-            with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding="utf8") as rep:
+            with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding="utf-8") as rep:
                 rep.write(r.text)
 
 # Проверка, 4 методов; #1.
