@@ -178,9 +178,9 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
 def snoop(username, site_data, verbose=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
     username = re.sub(" ", "%20", username)
 
-# Предотвращение 'DDoS' из-за невалидных логинов; номеров телефонов.
+# Предотвращение 'DDoS' из-за невалидных логинов; номеров телефонов, ошибок поиска из-за спецсимволов.
     ermail=[]
-    with open('domainlist.txt') as err:
+    with open('domainlist.txt', 'r', encoding="utf-8") as err:
         for line in err.readlines():
             errdata=line[:-1]
             ermail.append(errdata)
@@ -188,14 +188,21 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
         print(Style.BRIGHT + Fore.RED + "\nE-mail адрес будет обрезан до валидного состояния")
         username = username.rsplit(sep='@', maxsplit=1)[0]
 
+    with open('special characters', 'r', encoding="utf-8") as errspec:
+        s1 = errspec.read()
+        my_list = list(s1)
+        if any(my_list in username for my_list in my_list):
+            print(Style.BRIGHT + Fore.RED + f"недопустимые символы в username: {username}")
+            sys.exit(0)
+
     ernumber=['79', '89', "38", "37"]
     if any(ernumber in username[0:2] for ernumber in ernumber):
         if len(username) >= 10 and len(username) <= 13:
             if username.isdigit() == True:
                 print(Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
                 sys.exit(0)
-    elif username[0] == "+":
-        print (Style.BRIGHT + Fore.RED + "\nПубличный логин, начинающийся со знака '+', практически всегда невалидный...")
+    elif username[0] == "+" or username[0] == ".":
+        print (Style.BRIGHT + Fore.RED + "\nПубличный логин, начинающийся с такого символа, практически всегда невалидный...")
         sys.exit(0)
     elif username[0] == "9" and len(username) == 10 and username.isdigit() == True:
         print (Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
