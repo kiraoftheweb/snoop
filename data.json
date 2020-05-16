@@ -1864,6 +1864,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Damochka": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://www.damochka.ru/{}/",
+    "urlMain": "https://www.damochka.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Darksploit": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -2862,6 +2871,15 @@
     "urlMain": "https://folloart.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Forest": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://forest.ru/forum/user/{}/",
+    "urlMain": "https://forest.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "veter"
   },
   "Forexdengi": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -4702,6 +4720,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Holiday": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0410\u043d\u043a\u0435\u0442\u0430 \u0443\u0434\u0430\u043b\u0435\u043d\u0430, \u0437\u0430\u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+    "errorMsg2": "\u0441\u0435\u0440\u0432\u0435\u0440 \u0437\u043d\u0430\u043a\u043e\u043c\u0441\u0442\u0432, \u0430\u043d\u043a\u0435\u0442</title>",
+    "errоrTypе": "message",
+    "url": "https://www.holiday.ru/ru/{}",
+    "urlMain": "https://www.holiday.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "marina"
+  },
   "Hometheaterforum": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -5593,6 +5622,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Lingvolive": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "Sorry, an error occurred while processing your request.",
+    "errorMsg2": "<title>Error</title>",
+    "errоrTypе": "message",
+    "url": "http://forum.lingvolive.com/profile/{}/",
+    "urlMain": "http://forum.lingvolive.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "tom-wick"
+  },
   "Linux_org": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -5725,6 +5765,18 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Livemy": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u042d\u0442\u043e\u0442 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d \u0438\u043b\u0438 \u0431\u044b\u043b \u0443\u0434\u0430\u043b\u0435\u043d.",
+    "errorMsg2": "<h2>\u041f\u0440\u043e\u0438\u0437\u043e\u0448\u043b\u0430 \u043e\u0448\u0438\u0431\u043a\u0430</h2>",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "https://livemy.info/profiles/{}",
+    "urlMain": "https://livemy.info",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
+  },
   "Lkforum": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -5786,6 +5838,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "wizard"
   },
+  "Love_mail_ru": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "<title>\u0417\u043d\u0430\u043a\u043e\u043c\u0441\u0442\u0432\u0430@Mail.Ru</title>",
+    "errorMsg2": "\u0441\u0435\u0440\u0432\u0435\u0440 \u0437\u043d\u0430\u043a\u043e\u043c\u0441\u0442\u0432, \u0430\u043d\u043a\u0435\u0442</title>",
+    "errоrTypе": "message",
+    "url": "https://love.mail.ru/ru/{}",
+    "urlMain": "https://love.mail.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "irina_627"
+  },
   "Lovemakeup": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -5805,6 +5868,17 @@
     "urlMain": "https://loveplanet.ru",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Lubovy": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "<title>\u0417\u043d\u0430\u043a\u043e\u043c\u0441\u0442\u0432\u0430 \u041b\u044e\u0431\u043e\u0432\u044c.ru</title>",
+    "errorMsg2": "<title>QT Media 404</title>",
+    "errоrTypе": "message",
+    "url": "http://www.lubovy.ru/ru/{}",
+    "urlMain": "http://www.lubovy.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "irina_627"
   },
   "Mac-help": {
     "country": "\ud83c\udfc1",
@@ -6382,6 +6456,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Mydarling": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "<title>QT Media 404</title>",
+    "errorMsg2": "<title>\u0417\u0430\u043f\u0440\u043e\u0448\u0435\u043d\u043d\u0430\u044f \u0432\u0430\u043c\u0438 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430</title>",
+    "errоrTypе": "message",
+    "url": "http://mydarling.ru/page/{}/frl-4",
+    "urlMain": "http://mydarling.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Myfitnesspal": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -6658,6 +6743,15 @@
     "urlMain": "https://www.nixp.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "fly4life"
+  },
+  "Nkj": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://www.nkj.ru/forum/user/{}/",
+    "urlMain": "https://www.nkj.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "NnRU": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -8970,6 +9064,16 @@
     "urlProbe": "https://api.sports-tracker.com/apiserver/v1/user/name/{}",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Sprashivai": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorUrl": "http://sprashivai.ru/{}",
+    "errоrTypе": "response_url",
+    "url": "http://sprashivai.ru/{}?sl",
+    "urlMain": "http://sprashivai.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
   },
   "Stalker-zone": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
