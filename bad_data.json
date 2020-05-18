@@ -42,7 +42,7 @@
     "usernameON": "blue"
   },
   "Animeleague": {
-    "country": "\ud83c\udfc1",
+    "country": "\ud83c\udff4",
     "country_klas": "Kb",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "<title>Animeleague</title>",
@@ -187,7 +187,7 @@
     "usernameON": "adam"
   },
   "ColourLovers": {
-    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country": "\ud83c\udff4",
     "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.colourlovers.com/lover/{}",
