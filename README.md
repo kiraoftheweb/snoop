@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | IOS                   |     🚫    |
 | WSL                   |     🚫    |
 
-[database 1️⃣0️⃣7️⃣3️⃣ ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[database 1️⃣0️⃣7️⃣6️⃣ ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Snoop for OS Windows and GNU/Linux  
 **Release**  
@@ -99,7 +99,7 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --donate y            Пожертвовать на развитие Snoop project-а
+  --donate y, -d y      Пожертвовать на развитие Snoop project-а
   --sort y              Обновление/сортировка черного и белого списков (.json)
                         сайтов БД Snoop. Если вы не разработчик, не
                         используйте эту опцию
@@ -158,6 +158,7 @@ $ python3 snoop.py -с -t 13 -f -S -u ~/file.txt start
 # 'ctrl-c/z' — прервать поиск
 ```
 Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.  
+Для доступа браузера к результатм поиска на платформе Android требуются рут права.  
 
 Уничтожить **все** результаты поиска — удалить каталог '~/snoop/results'.  
 

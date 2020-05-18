@@ -20,6 +20,18 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "jack"
   },
+  "Alt": {
+    "country": "\ud83c\udff4",
+    "country_klas": "Wr",
+    "errorMsg": "Future Blog",
+    "errorMsg2": "<title>ALT.com - Age Verification</title>",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "https://alt.com/blog/{}",
+    "urlMain": "https://alt.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Dasha_Brixton"
+  },
   "AngelList": {
     "country": "\ud83c\udff4",
     "errоrTypе": "status_code",
@@ -163,6 +175,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "Jenny"
   },
+  "Coj": {
+    "country": "\ud83c\udff4",
+    "country_klas": "CU",
+    "errorMsg": "The resource doesn't exist or is not available",
+    "errorMsg2": "<title>\nCOJ: General Error",
+    "errоrTypе": "message",
+    "url": "https://coj.uci.cu/user/useraccount.xhtml?username={}",
+    "urlMain": "https://coj.uci.cu/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "ColourLovers": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -181,6 +204,16 @@
     "urlMain": "https://community.progress.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Defendtheweb": {
+    "country": "\ud83c\udff4",
+    "country_klas": "Kb",
+    "errorUrl": "https://defendtheweb.net/{}",
+    "errоrTypе": "response_url",
+    "url": "https://defendtheweb.net/profile/{}",
+    "urlMain": "https://defendtheweb.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
   },
   "EVE Online": {
     "country": "\ud83c\udff4",

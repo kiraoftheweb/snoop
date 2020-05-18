@@ -248,6 +248,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "Garage"
   },
+  "Adultfriendfinder": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorUrl": "https://adultfriendfinder.com/{}",
+    "errоrTypе": "response_url",
+    "exclusion": "\\W",
+    "url": "https://adultfriendfinder.com/profile/{}",
+    "urlMain": "https://adultfriendfinder.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Bunnysyummy2"
+  },
   "Advancedcustomfields": {
     "country": "\ud83c\udde6\ud83c\uddfa",
     "country_klas": "AU",
@@ -1658,17 +1669,6 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "example"
   },
-  "Coj": {
-    "country": "\ud83c\udde8\ud83c\uddfa",
-    "country_klas": "CU",
-    "errorMsg": "The resource doesn't exist or is not available",
-    "errorMsg2": "Informe de Error",
-    "errоrTypе": "message",
-    "url": "https://coj.uci.cu/user/useraccount.xhtml?username={}",
-    "urlMain": "https://coj.uci.cu/",
-    "usernameOFF": "nousermengirl1945",
-    "usernameON": "adam"
-  },
   "ComicvineGamespot": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -1937,16 +1937,6 @@
     "errоrTypе": "message",
     "url": "https://www.ddo.com/forums/member.php/?username={}",
     "urlMain": "https://www.ddo.com",
-    "usernameOFF": "nousermengirl1945",
-    "usernameON": "red"
-  },
-  "Defendtheweb": {
-    "country": "\ud83c\udfc1",
-    "country_klas": "Kb",
-    "errorUrl": "https://defendtheweb.net/{}",
-    "errоrTypе": "response_url",
-    "url": "https://defendtheweb.net/profile/{}",
-    "urlMain": "https://defendtheweb.net",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
   },
@@ -3835,6 +3825,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Forums_railfan": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "The user whose profile you are trying to view does not exist!",
+    "errorMsg2": "<title>Railfan.net Forums - An Error Has Occured!</title>",
+    "errоrTypе": "message",
+    "url": "http://forums.railfan.net/forums.cgi?action=viewprofile;username={}",
+    "urlMain": "http://forums.railfan.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "gpicyk"
+  },
   "Forums_serebii": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -5381,6 +5382,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "zoll"
   },
+  "Kinoz_to": {
+    "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
+    "errorMsg": "<title>KinoZ.TO -",
+    "errorMsg2": "<title>www.kinoz.to | 520: Web server is returning an unknown error</title>",
+    "errоrTypе": "message",
+    "url": "https://www.kinoz.to/Profile/{}.html",
+    "urlMain": "https://www.kinoz.to",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Filmseher89"
+  },
   "Knowem": {
     "country": "\ud83c\udde8\ud83c\udde6",
     "country_klas": "CA",
@@ -6790,6 +6802,15 @@
     "urlMain": "https://www.nn.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Noblogs": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://noblogs.org/members/{}/",
+    "urlMain": "https://noblogs.org/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "ushi"
   },
   "Northwestfirearms": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -8482,6 +8503,16 @@
     "errоrTypе": "status_code",
     "url": "https://social.technet.microsoft.com/profile/{}/",
     "urlMain": "https://social.technet.microsoft.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "S_to": {
+    "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
+    "errorUrl": "https://s.to/{}",
+    "errоrTypе": "response_url",
+    "url": "https://s.to/user/profil/{}",
+    "urlMain": "https://s.to",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
