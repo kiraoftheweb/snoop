@@ -86,9 +86,9 @@ $ pkg install coreutils
 ```
 $ python3 snoop.py --help
 
-usage: snoop.py [-h] [--donate Y] [--sort Y] [--version] [--verbose] [--json]
+usage: snoop.py [-h] [--donate y] [--sort y] [--version] [--verbose] [--json]
                 [--site] [--time] [--found-print] [--no-func] [--userload]
-                [--list all] [--country] [--update Y]
+                [--list all] [--country] [--save-report] [--update y]
                 USERNAMES [USERNAMES ...]
 
 Snoop: поиск никнейма по всем фронтам! (Version 1.2.0_rus (source))
