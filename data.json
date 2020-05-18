@@ -1835,6 +1835,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Cyber_harvard": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://cyber.harvard.edu/people/{}",
+    "urlMain": "https://cyber.harvard.edu",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "dboyd"
+  },
   "Cyberclock": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -4075,6 +4084,15 @@
     "urlMain": "https://gamefaqs.gamespot.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Gamerevolution": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "redirection",
+    "url": "https://forums.gamerevolution.com/members/?username={}",
+    "urlMain": "https://forums.gamerevolution.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "blue"
   },
   "Gamesfrm": {
     "country": "\ud83c\uddf9\ud83c\uddf7",
@@ -7172,6 +7190,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "steve"
   },
+  "Overclockers": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "<title>404</title>",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://overclockers.ru/cpubase/user/{}",
+    "urlMain": "https://overclockers.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "username"
+  },
   "P38forum": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -9234,6 +9263,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Stratege": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "<title>\u0424\u043e\u0440\u0443\u043c - Stratege.ru</title>",
+    "errоrTypе": "message",
+    "url": "https://www.stratege.ru/forums/member.php?username={}",
+    "urlMain": "https://www.stratege.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "blue"
+  },
   "Strava": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -10358,6 +10398,17 @@
     "urlMain": "https://www.weasyl.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Weedmaps": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "<title>Find Marijuana Dispensaries, Brands, Delivery, Deals &amp; Doctors</title>",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://weedmaps.com/brands/{}",
+    "urlMain": "https://weedmaps.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adams"
   },
   "Weforum": {
     "country": "\ud83c\udf0e",
