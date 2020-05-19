@@ -1678,6 +1678,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Community_asterisk": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://community.asterisk.org/u/{}/summary",
+    "urlMain": "https://community.asterisk.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "bford"
+  },
   "Computerbase": {
     "country": "\ud83c\udde9\ud83c\uddea",
     "country_klas": "DE",
@@ -1917,6 +1926,16 @@
     "urlMain": "http://dating.ru",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Datpiff": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorUrl": "https://www.datpiff.com/{}",
+    "errоrTypе": "response_url",
+    "url": "https://www.datpiff.com/profile/{}",
+    "urlMain": "https://www.datpiff.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Davesgarden": {
     "country": "\ud83c\udf0e",
@@ -8714,6 +8733,17 @@
     "urlMain": "http://secret.kompas3d.su/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "irina"
+  },
+  "Secure_hospitalityclub": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "<TITLE> :-) Hospitality Club</TITLE>",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://secure.hospitalityclub.org/hc/travel.php?cid={}",
+    "urlMain": "http://secure.hospitalityclub.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "vmoskve"
   },
   "Segmentfault": {
     "country": "\ud83c\udded\ud83c\uddf0",
