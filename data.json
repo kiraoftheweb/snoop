@@ -3645,6 +3645,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Forums_afterellen": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "redirection",
+    "exclusion": "\\W",
+    "url": "https://forums.afterellen.com/members/?username={}",
+    "urlMain": "https://forums.afterellen.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "buffaloed"
+  },
   "Forums_alliedmods": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -4377,6 +4387,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Globalvoices": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://globalvoices.org/author/{}/",
+    "urlMain": "https://globalvoices.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "7iber"
+  },
   "Gnusocial": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -5048,6 +5067,16 @@
     "errоrTypе": "message",
     "url": "https://www.infrance.su/forum/member.php?username={}",
     "urlMain": "https://www.infrance.su/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Infura": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "exclusion": "\\W",
+    "url": "https://community.infura.io/u/{}/summary",
+    "urlMain": "https://community.infura.io",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -5938,6 +5967,15 @@
     "urlMain": "http://lurkmore.to",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "Finstergeist"
+  },
+  "Lushstories": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://www.lushstories.com/{}",
+    "urlMain": "https://www.lushstories.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Mac-help": {
     "country": "\ud83c\udfc1",
@@ -7222,6 +7260,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "psr"
   },
+  "Packetstormsecurity": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "<title>Files: All Authors &#8776; Packet Storm</title>",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://packetstormsecurity.com/files/authors/{}/",
+    "urlMain": "https://packetstormsecurity.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "3nitro"
+  },
   "Painters-online": {
     "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
@@ -7435,6 +7484,15 @@
     "urlMain": "https://php.ru/forum/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Phrack": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "http://phrack.org/author_{}.html",
+    "urlMain": "http://phrack.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Dispater"
   },
   "Picsart": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
