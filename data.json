@@ -6272,6 +6272,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Metal-archives": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://www.metal-archives.com/users/{}",
+    "urlMain": "https://www.metal-archives.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Microcap_forum24": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -7298,6 +7307,15 @@
     "urlMain": "https://www.painters-online.co.uk",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "alanbickley"
+  },
+  "Paltalk": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://www.paltalk.com/people/users/{}/index.wmt",
+    "urlMain": "https://www.paltalk.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
   },
   "Pandia": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -9846,6 +9864,17 @@
     "urlMain": "https://www.touristlink.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "green"
+  },
+  "Tproger": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "<title>, \u0430\u0432\u0442\u043e\u0440 \u043d\u0430 Tproger</title>",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://tproger.ru/author/{}/",
+    "urlMain": "https://tproger.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "NickPrice"
   },
   "TrackmaniaLadder": {
     "country": "\ud83c\uddeb\ud83c\uddf7",
