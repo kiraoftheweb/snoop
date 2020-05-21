@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | IOS                   |     🚫    |
 | WSL                   |     🚫    |
 
-[database 1096_websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[database 1098_websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Snoop for OS Windows and GNU/Linux  
 **Release**  
