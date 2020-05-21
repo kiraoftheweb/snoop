@@ -7400,6 +7400,18 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Paypal": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "<title>PayPal.Me</title><meta name=\"twitt",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "https://www.paypal.me/{}",
+    "urlMain": "https://www.paypal.me",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Pbase": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",

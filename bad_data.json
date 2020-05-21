@@ -395,16 +395,6 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
-  "PayPal": {
-    "country": "\ud83c\udff4",
-    "errоrTypе": "response_url",
-    "exclusion": "\\W",
-    "url": "https://www.paypal.com/paypalme2/{}",
-    "urlMain": "https://www.paypal.me/",
-    "usernameOFF": "noneownsthisusername",
-    "usernameON": "blue",
-    "\u0441\u0442\u0430\u043b\u043e": "https://www.paypal.com/paypalme2/404"
-  },
   "Pexels": {
     "country": "\ud83c\udff4",
     "errоrTypе": "status_code",
