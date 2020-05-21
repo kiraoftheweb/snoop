@@ -528,6 +528,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Theflyfishingforum": {
+    "country": "\ud83c\udff4",
+    "country_klas": "US",
+    "errorMsg": "The requested page could not be found.",
+    "errorMsg2": "<title>The North American Fly Fishing Forum</title>",
+    "errоrTypе": "message",
+    "url": "https://www.theflyfishingforum.com/forums/members/{}.html",
+    "urlMain": "https://www.theflyfishingforum.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "WebNode": {
     "country": "\ud83c\udff4",
     "errоrTypе": "status_code",
