@@ -1687,6 +1687,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "bford"
   },
+  "Community_fandom": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "does not exist or has never logged in on this wiki",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://community.fandom.com/wiki/User:{}",
+    "urlMain": "https://community.fandom.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Red"
+  },
   "Computerbase": {
     "country": "\ud83c\udde9\ud83c\uddea",
     "country_klas": "DE",
@@ -8406,6 +8417,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Riftgame": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>RIFT Forums</title>",
+    "errоrTypе": "message",
+    "url": "http://forums.riftgame.com/members/{}.html",
+    "urlMain": "http://forums.riftgame.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Rmmedia": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -8438,6 +8460,15 @@
     "urlMain": "https://www.roblox.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "bluewolfekiller"
+  },
+  "Rollitup": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://www.rollitup.org/members/?username={}",
+    "urlMain": "https://www.rollitup.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Rom": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -8859,6 +8890,16 @@
     "urlMain": "https://www.shitpostbot.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Shoe": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "exclusion": "\\W",
+    "url": "http://{}.shoe.org/",
+    "urlMain": "http://shoe.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
   },
   "Shophelp": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
