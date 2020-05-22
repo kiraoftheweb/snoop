@@ -1727,6 +1727,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "Red"
   },
+  "Community_p2pu": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://community.p2pu.org/u/{}/summary",
+    "urlMain": "https://community.p2pu.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "grif"
+  },
   "Computerbase": {
     "country": "\ud83c\udde9\ud83c\uddea",
     "country_klas": "DE",
@@ -6563,6 +6572,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Mpgh": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>MPGH - MultiPlayer Game Hacking & Cheats</title>",
+    "errоrTypе": "message",
+    "url": "https://www.mpgh.net/forum/member.php?username={}",
+    "urlMain": "https://www.mpgh.net/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Msofficeforums": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -10754,6 +10774,16 @@
     "urlMain": "https://windy.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Wireclub": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorUrl": "https://www.wireclub.com/{}",
+    "errоrTypе": "response_url",
+    "url": "https://www.wireclub.com/users/{}",
+    "urlMain": "https://www.wireclub.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Wirednewyork": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
