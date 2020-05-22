@@ -20,6 +20,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "hazelamy"
   },
+  "123rf": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorUrl": "https://ru.123rf.com",
+    "errоrTypе": "response_url",
+    "url": "https://ru.123rf.com/profile_{}",
+    "urlMain": "https://ru.123rf.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "rawpixel"
+  },
   "1337x": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -868,6 +878,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Aufeminin": {
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "FR",
+    "errorUrl": "https://www.aufeminin.com",
+    "errоrTypе": "response_url",
+    "url": "https://www.aufeminin.com/profile/{}",
+    "urlMain": "https://www.aufeminin.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "AuthorSTREAM": {
     "country": "\ud83c\uddee\ud83c\uddf3",
     "country_klas": "IN",
@@ -1577,6 +1597,15 @@
     "urlMain": "https://club.cnews.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
+  },
+  "Club_doctissimo": {
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "FR",
+    "errоrTypе": "status_code",
+    "url": "https://club.doctissimo.fr/{}/",
+    "urlMain": "https://club.doctissimo.fr",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Cmet4uk": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -2495,6 +2524,16 @@
     "urlMain": "https://elwo.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
+  },
+  "Empflix": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorUrl": "https://www.empflix.in",
+    "errоrTypе": "response_url",
+    "url": "https://www.empflix.in/profile/{}/",
+    "urlMain": "https://www.empflix.in",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Enot-poloskun": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -7736,6 +7775,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "plug-dj-rock"
   },
+  "Pluralsight": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "<title>Not available | Profile</title>",
+    "errorMsg2": "<title>Pluralsight</title>",
+    "errоrTypе": "message",
+    "url": "https://app.pluralsight.com/profile/author/{}",
+    "urlMain": "https://app.pluralsight.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam-crahen"
+  },
   "Plurk": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -10489,6 +10539,15 @@
     "errоrTypе": "message",
     "url": "https://www.w7forums.com/members/?username={}",
     "urlMain": "https://www.w7forums.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Wakatime": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://wakatime.com/@{}",
+    "urlMain": "https://wakatime.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
