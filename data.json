@@ -63,6 +63,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "247sports": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://247sports.com/user/{}/",
+    "urlMain": "https://247sports.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "24open": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -2964,6 +2973,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Footballforums": {
+    "country": "\ud83c\uddec\ud83c\udde7",
+    "country_klas": "GB",
+    "errоrTypе": "redirection",
+    "url": "http://www.footballforums.net/members/?username={}",
+    "urlMain": "http://www.footballforums.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Forest": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -3429,6 +3447,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
   },
+  "Forum_officiating": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "<meta name=\"robots\" content=\"noindex,follow",
+    "errorMsg2": "<meta name=\"description\" content=\" is a in the The Official Forum. View 's profile.",
+    "errоrTypе": "message",
+    "url": "https://forum.officiating.com/members/{}.html",
+    "urlMain": "https://forum.officiating.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "rich"
+  },
   "Forum_online-knigi": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -3599,6 +3628,15 @@
     "urlMain": "https://forum.ubuntu-it.org",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Forum_umhoops": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://forum.umhoops.com/u/{}/summary",
+    "urlMain": "https://forum.umhoops.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "umhoops"
   },
   "Forum_vegalab": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -3835,6 +3873,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "zigro"
   },
+  "Forums_footballindex": {
+    "country": "\ud83c\uddec\ud83c\udde7",
+    "country_klas": "GB",
+    "errоrTypе": "status_code",
+    "url": "https://forums.footballindex.co.uk/user/{}",
+    "urlMain": "https://forums.footballindex.co.uk",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "misto"
+  },
   "Forums_futbin": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -3974,6 +4021,15 @@
     "errоrTypе": "status_code",
     "url": "https://forums.universaldashboard.io/u/{}/summary",
     "urlMain": "https://forums.universaldashboard.io/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Forums_vitalfootball": {
+    "country": "\ud83c\uddec\ud83c\udde7",
+    "country_klas": "GB",
+    "errоrTypе": "redirection",
+    "url": "https://forums.vitalfootball.co.uk/members/?username={}",
+    "urlMain": "https://forums.vitalfootball.co.uk",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -5619,6 +5675,15 @@
     "urlMain": "https://www.kuharka.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Kwejk": {
+    "country": "\ud83c\uddf5\ud83c\uddf1",
+    "country_klas": "PL",
+    "errоrTypе": "status_code",
+    "url": "https://kwejk.pl/uzytkownik/{}#/tablica/",
+    "urlMain": "https://kwejk.pl",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "ralia"
   },
   "Kwest": {
     "country": "\ud83c\uddeb\ud83c\uddf7",
@@ -8200,6 +8265,15 @@
     "urlMain": "https://forum.quartertothree.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "rei"
+  },
+  "Queer": {
+    "country": "\ud83c\uddf5\ud83c\uddf1",
+    "country_klas": "PL",
+    "errоrTypе": "status_code",
+    "url": "https://queer.pl/user/{}",
+    "urlMain": "https://queer.pl",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "dhoyosm"
   },
   "Quibblo": {
     "country": "\ud83c\udfc1",
@@ -10900,6 +10974,15 @@
     "errоrTypе": "redirection",
     "url": "http://wuz.by/forum/members/?username={}",
     "urlMain": "http://wuz.by",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Wykop": {
+    "country": "\ud83c\uddf5\ud83c\uddf1",
+    "country_klas": "PL",
+    "errоrTypе": "status_code",
+    "url": "https://www.wykop.pl/ludzie/{}/",
+    "urlMain": "https://www.wykop.pl",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
