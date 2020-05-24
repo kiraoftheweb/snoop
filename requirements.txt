@@ -7,3 +7,4 @@ playsound>=1.2.2
 requests>=2.22.0
 requests-futures>=1.0.0
 soupsieve>=1.9.2
+speedtest-cli>=2.1.2

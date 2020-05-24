@@ -4880,7 +4880,7 @@
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
-    "errorMsg2": "None",
+    "errorMsg2": "<title>403 Forbidden</title>",
     "errоrTypе": "message",
     "exclusion": "\\W",
     "url": "http://www.hdseason.ru/index/8-0-{}",
@@ -6018,7 +6018,7 @@
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
-    "errorMsg2": "None",
+    "errorMsg2": "<title>403 Forbidden</title>",
     "errоrTypе": "message",
     "url": "http://www.lkforum.ru/member.php?username={}",
     "urlMain": "http://www.lkforum.ru/",
@@ -6697,6 +6697,16 @@
     "urlMain": "https://myanimelist.net/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "My_dublikat": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "redirection",
+    "exclusion": "\\W",
+    "url": "https://my.dublikat.shop/members/?username={}",
+    "urlMain": "https://my.dublikat.shop",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "My_mail_ru_new": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -7965,7 +7975,7 @@
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
     "errorMsg": "<div id='dle-content'></div><br>",
-    "errorMsg2": "None",
+    "errorMsg2": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d.",
     "errоrTypе": "message",
     "url": "http://www.porjati.net/user/{}/",
     "urlMain": "http://www.porjati.net",
@@ -10539,18 +10549,6 @@
     "errоrTypе": "status_code",
     "url": "https://www.vivino.com/users/{}",
     "urlMain": "https://www.vivino.com/",
-    "usernameOFF": "nousermengirl1945",
-    "usernameON": "adam"
-  },
-  "Vkovk": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "\u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442!",
-    "errorMsg2": "<title>\u0414\u043e\u0441\u0442\u0443\u043f \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d",
-    "errоrTypе": "message",
-    "exclusion": "\\W",
-    "url": "http://www.vkovk.ru/profile-vkontakte.php?user={}",
-    "urlMain": "http://www.vkovk.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },

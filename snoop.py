@@ -5,6 +5,7 @@ import certifi
 import csv
 import json
 import locale
+import networktest
 import os
 import platform
 import random
@@ -35,7 +36,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.\033[34;1m2.0\033[31;1m_rus\033[0m
+                         _|    \033[0m \033[37mv1.\033[34;1m2.1\033[31;1m_rus\033[0m
 """)
 
 if sys.platform == 'win32':
@@ -52,7 +53,7 @@ else:
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-__version__ = "1.2.0_rus Snoop (source)"
+__version__ = "1.2.1_rus Snoop (source)"
 
 dirresults = os.getcwd()
 timestart = time.time()
@@ -660,21 +661,23 @@ def main():
 
     args = parser.parse_args()
 
-# Информативный вывод '-S'.
+# Информативный вывод:
+# Опция  '-S'.
     if args.reports:
         print(Fore.CYAN + "[+] активирована опция '-S': «сохранять странички найденных аккаунтов»")
 
+# Опция  '-n'.
     if args.no_func:
         print(Fore.CYAN + "[+] активирована опция '-n': «отключены:: цвета; звук; флаги; браузер»")
+
+# Опция  '-t'.
     try:
         if args.timeout:
             print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от сайта \033[36;1m<= {timeout}_sec\033[0m\033[36m.» \033[0m")
     except:
         pass
-    if args.verbose:
-        print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»")
 
-# Сортировка по странам.
+# Сортировка по странам '-с'.
     if args.country:
         patchjson = ("{}".format(args.json_file))
         raw = open(patchjson, "r", encoding="utf-8")
@@ -686,14 +689,20 @@ def main():
         for site in country_sites:
             sortC[site] = site_country.get(site)
 
-# Информативный вывод '-f'.
+# Опция '-f'.
     if args.print_found_only:
         print(Fore.CYAN + "[+] активирована опция '-f': «выводить на печать только найденные аккаунты»")
 
+# Опция '-s'.
     if args.site_list:
         print(Fore.CYAN + "[+] активирована опция '-s': «будет произведён поиск user-a на 1-м выбранном website»\n"
         "    допустимо использовать опцию '-s' несколько раз\n"
         "    опция '-s' несовместима с опцией '-с'")        
+
+# Опция '-v'
+    if args.verbose:
+        print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»")
+        networktest.nettest()
 
 # Опция сортировки.
     if args.sort:
@@ -1138,7 +1147,7 @@ def main():
                                      'Общее_замедление/мс',
                                      'Отклик/мс',
                                      'Общее_время/мс',
-                                     'Внимание!_Поиск_проходил_при_слабом_интернет_соединении_или_Internet-Censorship. '
+                                     'Внимание!_Поиск_проходил_при_нестабильном_интернет_соединении_или_Internet-Censorship. '
                                      'Результаты_могут_быть_неполные.'
                                      ])
                 else:
@@ -1180,7 +1189,7 @@ def main():
     # Финишный вывод.
         if censor >= 11 * int(kef_user):
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
-            print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Cлабое соединение или Internet Censorship:", 
+            print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Нестабильное соединение или Internet Censorship:", 
                               "*используйте VPN")
             print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
         else:
@@ -1344,7 +1353,7 @@ def main():
                                      'Общее_замедление/мс',
                                      'Отклик/мс',
                                      'Общее_время/мс',
-                                     'Внимание!_Поиск_проходил_при_слабом_интернет_соединении_или_Internet-Censorship. '
+                                     'Внимание!_Поиск_проходил_при_нестабильном_интернет_соединении_или_Internet-Censorship. '
                                      'Результаты_могут_быть_неполные.'
                                      ])
                 else:
@@ -1386,7 +1395,7 @@ def main():
     # Финишный вывод.
         if censor >= 11:
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
-            print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Cлабое соединение или Internet Censorship:", "*используйте VPN")
+            print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Нестабильное соединение или Internet Censorship:", "*используйте VPN")
             print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
         else:
             print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))

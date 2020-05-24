@@ -529,6 +529,18 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Vkovk": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442!",
+    "errorMsg2": "<title>\u0420\u0435\u0441\u0443\u0440\u0441 \u0437\u0430\u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u0430\u043d</title>",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "http://www.vkovk.ru/profile-vkontakte.php?user={}",
+    "urlMain": "http://www.vkovk.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "WebNode": {
     "country": "\ud83c\udff4",
     "errоrTypе": "status_code",
