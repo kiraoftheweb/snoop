@@ -50,11 +50,11 @@ def nettest():
 
     # Ping
     def func_v3():
-        if v3 >= 360:
+        if v3 >= 250:
             return (Style.BRIGHT + Fore.RED + str(v3) + Style.RESET_ALL)
-        elif 80 <= v3 < 360:
+        elif 60 <= v3 < 250:
             return (Style.BRIGHT + Fore.YELLOW + str(v3) + Style.RESET_ALL)
-        elif v3 < 80:
+        elif v3 < 60:
             return (Style.BRIGHT + Fore.GREEN + str(v3) + Style.RESET_ALL)
 
     print("\033[36mТест сети:\033[0m Download::", func_v1(), "Мбит/с, Upload::", func_v2(), "Мбит/с, Ping::", func_v3(), "мс")

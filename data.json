@@ -11197,6 +11197,24 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Favera": {
+    "country": "🇷🇺",
+    "country_klas": "RU",    
+    "errоrTypе": "status_code",
+    "url": "https://favera.ru/{}",
+    "urlMain": "https://favera.ru",
+    "usernameON": "mayhem",
+    "usernameOFF": "nousermengirl1945"
+  },  
+  "Itfy": {
+    "country": "🇷🇺",
+    "country_klas": "RU",
+    "errоrTypе": "redirection",
+    "url": "https://itfy.org/members/?username={}",
+    "urlMain": "https://itfy.org",
+    "usernameON": "god",
+    "usernameOFF": "nousermengirl1945"
+  },  
   "Zomato": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
