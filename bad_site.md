@@ -51,7 +51,7 @@
 50. 🏴 [Tenforums](https://www.tenforums.com)
 51. 🏴 [Tf2items](http://www.tf2items.com)
 52. 🏴 [Theflyfishingforum](https://www.theflyfishingforum.com)
-53. 🇷🇺 [Vkovk](http://www.vkovk.ru/)
+53. 🏴 [Vkovk](http://www.vkovk.ru/)
 54. 🏴 [WebNode](https://www.webnode.cz/)
 55. 🏴 [YandexMarket](https://market.yandex.ru/)
 56. 🏴 [Yougame](https://yougame.biz/)
