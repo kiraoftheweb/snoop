@@ -1974,6 +1974,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Datingadvice": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://www.datingadvice.com/forum/users/{}",
+    "urlMain": "https://www.datingadvice.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Datpiff": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -4471,6 +4480,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Gingerbread": {
+    "country": "\ud83c\uddec\ud83c\udde7",
+    "country_klas": "Gb",
+    "errоrTypе": "status_code",
+    "url": "https://www.gingerbread.org.uk/members/{}/",
+    "urlMain": "https://www.gingerbread.org.uk",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Giphy": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -5807,6 +5825,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Letschatlove": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "The user whose profile you are trying to view does not exist.",
+    "errorMsg2": "<title>An Error Has Occurred!</title>",
+    "errоrTypе": "message",
+    "url": "https://letschatlove.com/profile/{}/",
+    "urlMain": "https://letschatlove.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Fusion"
+  },
   "Letterboxd": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -6697,6 +6726,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "green"
   },
+  "Musiker-board": {
+    "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
+    "errоrTypе": "redirection",
+    "url": "https://www.musiker-board.de/members/?username={}",
+    "urlMain": "https://www.musiker-board.de",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "My-question": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -7504,6 +7542,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Parkrocker": {
+    "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
+    "errоrTypе": "redirection",
+    "exclusion": "\\W",
+    "url": "https://www.parkrocker.net/mitglieder/?username={}",
+    "urlMain": "https://www.parkrocker.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "diablo0106"
+  },
   "Partyflock": {
     "country": "\ud83c\uddf3\ud83c\uddf1",
     "country_klas": "NL",
@@ -8211,6 +8259,15 @@
     "urlMain": "https://publiclab.org",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Pulmonaryhypertensionnews": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://pulmonaryhypertensionnews.com/forums/members/{}/",
+    "urlMain": "https://pulmonaryhypertensionnews.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "gwendolyn"
   },
   "Pushsquare": {
     "country": "\ud83c\udfc1",
@@ -10439,6 +10496,15 @@
     "urlMain": "https://uvelir.net/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
+  },
+  "Uwr1": {
+    "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
+    "errоrTypе": "status_code",
+    "url": "http://uwr1.de/forum/profile/{}",
+    "urlMain": "http://uwr1.de",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "VK": {
     "country": "\ud83c\udf0e",

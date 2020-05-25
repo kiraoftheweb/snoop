@@ -42,13 +42,13 @@ _____/ _|  _|\___/ \___/  .__/
 if sys.platform == 'win32':
 	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
 	print (Fore.CYAN + " cd с:\snoop" + Style.RESET_ALL)	
-	print (Fore.CYAN + " python snoop.py -h" + Style.RESET_ALL, "#справка 'как начать'")
+	print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
 	print (Fore.CYAN + " python snoop.py username" + Style.RESET_ALL, "#поиск user-a")
 	print (Fore.CYAN + "============================================\n" + Style.RESET_ALL)
 else:
 	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
 	print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
-	print (Fore.CYAN + " python3 snoop.py -h" + Style.RESET_ALL, "#справка по функциям ПО")
+	print (Fore.CYAN + " python3 snoop.py --help" + Style.RESET_ALL, "#справка")
 	print (Fore.CYAN + " python3 snoop.py username" + Style.RESET_ALL, "#поиск user-a")
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
