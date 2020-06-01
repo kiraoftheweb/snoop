@@ -11,11 +11,11 @@ import platform
 import random
 import re
 import requests
-import sorting
 import subprocess
 import sys
 import time
 import webbrowser
+import base64
 
 from argparse import ArgumentTypeError
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
@@ -24,11 +24,16 @@ from colorama import Fore, Style, init
 from concurrent.futures import ThreadPoolExecutor
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
-
+try:
+    from rich.progress import (BarColumn, Progress,TimeRemainingColumn)
+except ModuleNotFoundError:
+    print(f"Установить модуль 'rich', в GNU команда:\n" + \
+    Style.BRIGHT + Fore.RED + "cd ~/snoop && python3 -m pip install -r requirements.txt" + \
+    Style.RESET_ALL)
+    sys.exit(0)
 
 if sys.platform == 'win32':
     locale.setlocale(locale.LC_ALL, '')
-
 init(autoreset=True)
 
 print ("""\033[36m
@@ -36,7 +41,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.\033[34;1m2.1\033[31;1m_rus\033[0m
+                         _|    \033[0m \033[37mv1.2.1\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 if sys.platform == 'win32':
@@ -53,12 +58,49 @@ else:
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-__version__ = "1.2.1_rus Snoop (source)"
+version = "1.2.1_rus Snoop (source demo)"
 
 dirresults = os.getcwd()
 timestart = time.time()
 time_data = time.localtime()
 censor = 0
+
+def fff():
+    try:
+        with open('BDdemo', "r", encoding="utf8") as z:
+            dd = z.read() 
+            b1 = dd.encode("UTF-8") 
+            d1 = base64.b64decode(b1) 
+            rt1 = d1[::-1] 
+            d2 = base64.b64decode(rt1)
+            s12 = d2.decode("UTF-8") 
+            bbb1 = json.loads(s12) 
+            return bbb1
+    except:
+        print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
+        sys.exit(0)
+
+def kkk():
+    try:
+        with open('BDflag', "r", encoding="utf8") as z1:
+            d11 = z1.read()
+            b11 = d11.encode("UTF-8") 
+            t11 = base64.b64decode(b11) 
+            rt11 = t11[::-1] 
+            d22 = base64.b64decode(rt11)
+            s112 = d22.decode("UTF-8") 
+            ccc1 = json.loads(s112) 
+            return ccc1
+    except:
+        print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
+        sys.exit(0)
+
+# Флаг БС
+def baza():
+    BS = fff()
+    flagBS = len(BS)
+    return BS
+flagBS = len(baza())
 
 # Создание директорий результатов.
 try:
@@ -98,7 +140,7 @@ def print_info(title, info, color=True):
             Fore.WHITE + f" {info}" +
             Fore.RED + "\033[5m >\033[0m")
     else:
-        print(f"[*] {title} {info}:")
+        print(f"\n[*] {title} {info}:")
 
 
 def print_error(err, errstr, var, verbose=False, color=True):
@@ -144,17 +186,27 @@ def print_not_found(social_network, response_time, verbose=False, color=True):
         print(f"[-] {social_network}: Увы!")
 
 
-def print_invalid(social_network, msg, color=True):
+def print_invalid(mes, social_network, message, color=True):
     """Ошибка вывода результата"""
     if color:
-        print((Fore.CYAN + "[" +
+        print((Fore.RED + "............[" +
             Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL +
-            Fore.CYAN + "]" +
+            Fore.RED + "]" +
             Style.BRIGHT + Fore.GREEN + f" {social_network}:" +
-            Style.BRIGHT + Fore.YELLOW + f" {msg}"))
+            Style.RESET_ALL + Fore.YELLOW + f" {message}"))
     else:
-        print(f"[-] {social_network} {msg}")
+        print(f"[-] {social_network} {message}")
 
+def print_invalid2(mes, social_network, message, color=True):
+    """Ошибка вывода результата verbose"""
+    if color:
+        print((Fore.RED + ".............[" +
+            Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL +
+            Fore.RED + "]" +
+            Style.BRIGHT + Fore.GREEN + f" {social_network}:" +
+            Style.RESET_ALL + Fore.YELLOW + f" {message}"))
+    else:
+        print(f"[-] {social_network} {message}")
 
 def get_response(request_future, error_type, social_network, verbose=False, retry_no=None, color=True):
     try:
@@ -173,7 +225,7 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
     except requests.exceptions.Timeout as errt:
         print_error(errt, "Timeout ошибка:", social_network, verbose, color)
     except requests.exceptions.RequestException as err:
-        print_error(err, "Ошибка раскладки\nклавиатуры/*символов", social_network, verbose, color)
+        print_error(err, "Ошибка раскладки клавиатуры/*символов", social_network, verbose, color)
     return None, "", -1
 
 def snoop(username, site_data, verbose=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
@@ -189,7 +241,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
         print(Style.BRIGHT + Fore.RED + "\nE-mail адрес будет обрезан до валидного состояния")
         username = username.rsplit(sep='@', maxsplit=1)[0]
 
-    with open('special characters', 'r', encoding="utf-8") as errspec:
+    with open('specialcharacters', 'r', encoding="utf-8") as errspec:
         s1 = errspec.read()
         my_list = list(s1)
         if any(my_list in username for my_list in my_list):
@@ -222,8 +274,8 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 
 # Рабочий лимит 20+
     try:
-        if len(site_data) >= 20:
-            max_workers=20
+        if len(site_data) >= 50:
+            max_workers=18
         else:
             max_workers=len(site_data)
     except:
@@ -266,7 +318,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
         if exclusionYES and re.search(exclusionYES, username):
 # Не нужно делать проверку на сайте: если это имя пользователя не допускается.
             if not print_found_only:
-                print_invalid(social_network, f"Недопустимый формат имени для данного сайта", color)
+                print_invalid("", social_network, f"Недопустимый формат имени для данного сайта", color)
 
             results_site["exists"] = "прочерк"
             results_site["url_user"] = ""
@@ -293,12 +345,14 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
             if reports:
                 request_method = session.get
             else:
-                if net_info["errоrTypе"] == 'status_code' or net_info["errоrTypе"] == "redirection":
-                    request_method = session.head
-                else:
-                    request_method = session.get
-
-            if net_info["errоrTypе"] == "response_url":
+                try:
+                    if net_info["errorTypе"] == 'status_code' or net_info["errorTypе"] == "redirection":
+                        request_method = session.head
+                    else:
+                        request_method = session.get
+                except:
+                    sys.exit(0)
+            if net_info["errorTypе"] == "response_url":
 # Сайт перенаправляет запрос на другой URL, если имя пользователя не существует.
 # Имя найдено. Запретить перенаправление чтобы захватить статус кода из первоначального url.
                 allow_redirects = False
@@ -320,8 +374,21 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 
 # print(results_site) # Проверка записи на успех.
     li_time = []
-    for social_network, net_info in site_data.items():
+    if color == True and verbose == False:
+        progress1 = Progress(BarColumn(bar_width=6),
+        "[progress.percentage]{task.percentage:>3.0f}%", auto_refresh=False)
+    else:
+        progress1 = Progress(auto_refresh=False)
+    if verbose == True:
+        if color:
+            progress1 = Progress(TimeRemainingColumn(),
+            "[progress.percentage]{task.percentage:>3.0f}%", auto_refresh=False)
+        else:
+            progress1 = Progress(auto_refresh=False)
 
+    for social_network, net_info in progress1.track(site_data.items(),description=""):
+        if color:
+            progress1.refresh()
 # Получить результаты снова.
         results_site = results_total.get(social_network)
 
@@ -334,7 +401,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
             continue
 
 # Получить ожидаемый тип данных 4 методов.
-        error_type = net_info["errоrTypе"]
+        error_type = net_info["errorTypе"]
 
 # Данные по умолчанию в случае каких-либо сбоев в выполнении запроса.
         http_status = "*???"
@@ -442,10 +509,12 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
                 exists = "увы"
 #            print(r.text) #Проверка ответа
 
-# Если все 4 метода не сработали, например, из-за ошибки доступа.
+# Если все 4 метода не сработали, например, из-за ошибки доступа (красный) или из-за каптчи (желтый)
         else:
-            if not print_found_only:
-                print_invalid(social_network, "*ПРОПУСК", color)
+            if not print_found_only and verbose == False:
+                print_invalid("", social_network, "*ПРОПУСК", color)
+            elif not print_found_only and verbose == True:
+                print_invalid2("", social_network, "*ПРОПУСК", color)    
             exists = "блок"
 
 # Считать тайминги приближенно.
@@ -472,27 +541,27 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
                 if color == False:
                     if print_found_only == True:
                         if exists == "найден!" or exists == "блок":
-                            print(f"├───[{time_site} ms ответ]" + \
-                            f"───────────────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                            print(f"[*{time_site} ms ответ]" + \
+                            f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
                     else:
-                        print(f"├───[{time_site} ms ответ]" + \
-                        f"───────────────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                        print(f"[*{time_site} ms ответ]" + \
+                        f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
                 if color == True:
                     if print_found_only == True:
                         if exists == "найден!" or exists == "блок":
                             if dif > 5:
-                                print(Style.BRIGHT + Fore.RED + f"├───[{time_site} ms ответ]"
-                                f"───────────────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                                print(Style.BRIGHT + Fore.RED + f"[**{time_site} ms ответ]"
+                                f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
                             else:
-                                print(Fore.CYAN + f"├───[{time_site} ms ответ]" + \
-                                f"───────────────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                                print(Style.BRIGHT + Fore.CYAN + f"[**{time_site} ms ответ]" + \
+                                f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
                     else:
                         if dif > 5:
-                            print(Style.BRIGHT + Fore.RED + f"├───[{time_site} ms ответ]" + \
-                            f"───────────────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                            print(Style.BRIGHT + Fore.RED + f"[**{time_site} ms ответ]" + \
+                            f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
                         else:
-                            print(Fore.CYAN + f"├───[{time_site} ms ответ]" + \
-                            f"───────────────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                            print(Style.BRIGHT + Fore.CYAN + f"[**{time_site} ms ответ]" + \
+                            f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
 
 # Служебная информация для CSV.
         response_time_site_ms = 0
@@ -562,64 +631,76 @@ def main():
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read()
 
-    version_snoop = f"\033[36m%(prog)s: {__version__}\033[36m\n" +  \
+    version_snoop = f"\033[37m{cop}\033[0m\n" + \
+                     f"\033[36m%(prog)s: {version}\033[36m\n" +  \
                      f"\033[36mOS: {platform.platform(aliased=True, terse=0)}\033[36m\n" + \
-                     f"\033[36mPython: {platform.python_version()}\033[36m\n\n" + \
-                     f"\033[37m{cop}\033[0m\n"
+                     f"\033[36mPython: {platform.python_version()}\033[36m\n\n"
+                     
+
 
 # Пожертвование.
     donate = ("""
-\033[36m╭donate:\033[0m
-\033[36m├──BTC_BHC:\033[0m \033[37m1EXoQj1rd5oi54k9yynVLsR4kG61e4s8g3\033[0m
-\033[36m├──Яндекс.Деньги:\033[0m \033[37m4100111364257544\033[0m  
-\033[36m└──PayPal:\033[0m \033[37msnoopproject@protonmail.com\033[0m    
-\n\033[36mИсходный код:\033[0m \033[37mhttps://github.com/snooppr/snoop\033[0m """)
-              
-# Флаг БС.
-    with open("data.json", "r", encoding="utf8") as flag:
-        BS = json.load(flag)
-        flagBS = len(BS)                
+Snoop Demo Version
+===============================================================================    
+╭donate:                                                                      ||
+├──BTC_BHC: \033[37m1EXoQj1rd5oi54k9yynVLsR4kG61e4s8g3\033[0m                                ||
+├──Яндекс.Деньги: \033[37m4100111364257544\033[0m                                            ||
+└──PayPal: \033[37msnoopproject@protonmail.com\033[0m                                        ||
+                                                                              ||
+Если вас заинтересовала Snoop Demo Version, Вы можете получить                ||
+\033[36mSnoop Full Version\033[0m, поддержав развитие проекта 20$ = 1200р.                   ||
+При пожертвовании в сообщении укажите информацию в таком порядке:             ||
+    '\033[36mПожертвование: 20$ ваш e-mail\033[0m'                                           ||
+    "\033[36mFull Version for Windows", или "Full Version for Linux\033[0m"                  ||
+В ближайшее время на почту придёт ссылка на скачивание Snoop Full Version.    ||
+                                                                              ||
+Если Snoop требуется вам для служебных или образовательных задач,             ||
+напишите письмо на e-mail разработчика в свободной форме.                     ||
+\033[36msnoopproject@protonmail.com\033[0m                                                   ||
+===============================================================================
+Исходный код: \033[37mhttps://github.com/snooppr/snoop\033[0m                                ||""")
+
                 
 # Назначение опций Snoop.
     parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
-                            description=f"{module_name} (Version {__version__})",
-                            epilog=(f"\033[36mSnoop поддержка: \033[36;1m{flagBS}\033[0m \033[36mWebsites!!!\033[0m\n\n{donate} ")
+                            description=f"{module_name} (Version {version})",
+                            epilog=(Fore.CYAN + f"Snoop " + Style.BRIGHT + Fore.RED + f"Demo Version "+ Style.RESET_ALL + \
+                            Fore.CYAN + f"поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n"  + Fore.CYAN +
+                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1100+\033[0m \033[36mWebsites!!!\033[0m\n\n")
                             )
     parser.add_argument("--donate y", "-d y",
                         action="store_true", dest="donation",
-                        help="Пожертвовать на развитие Snoop project-а"
-                        )
-    parser.add_argument("--sort y",
-                        action="store_true", dest="sort", default=False,
-                        help="Обновление/сортировка черного и белого списков (.json) сайтов БД Snoop.\n"
-                             "Если вы не разработчик, не используйте эту опцию"
+                        help="Пожертвовать на развитие Snoop Project-а (получить \033[36mSnoop Full Version\033[0m)"
                         )
     parser.add_argument("--version", "--about", "-V",
                         action="version",  version=(version_snoop),
-                        help="Вывод на печать версий: OS; Snoop; Python и Лицензии"
+                        help="\033[31;1mНАЧАЛО! Вывод на печать версий: OS; Snoop; Python и Лицензии\033[0m"
                         )
     parser.add_argument("--verbose", "-v",
                         action="store_true",  dest="verbose", default=False,
                         help="Во время поиска 'username' выводить на печать подробную вербализацию"
                         )
-    parser.add_argument("--json", "-j",
-                        dest="json_file", default="data.json", metavar='',
-                        help="""Указать для поиска 'username' другую БД в формате 'json',
-                              например, 'example_data.json'. Если у вас нет такой БД, не используйте эту опцию"""
+    parser.add_argument("--base", "-b",
+                        dest="json_file", default="BDdemo", metavar='',
+                        help="Указать для поиска 'username' другую БД (Локально)/В demo version функция отключена"
+                        )
+    parser.add_argument("--web-base", "-w",
+                        action="store_true", dest="web",
+                        help="Подключиться для поиска 'username' к обновляемой web_БД (Online)"
                         )
     parser.add_argument("--site", "-s",
                         action="append", metavar='', 
                         dest="site_list",  default=None, 
-                        help="Указать имя сайта из БС '--list all'. Поиск 'username' на одном указанном ресурсе"
+                        help="Указать имя сайта из БД '--list all'. Поиск 'username' на одном указанном ресурсе"
                         )
-    parser.add_argument("--time", "-t 11",
+    parser.add_argument("--time-out", "-t 9",
                         action="store", metavar='',
-                        dest="timeout", type=timeout_check, default=9,
+                        dest="timeout", type=timeout_check, default=5,
                         help="Установить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
                              "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки:'"
                              "\033[31;1mВкл. эту опцию необходимо практически всегда при медленном \
                              интернет соединении\033[0m, чтобы избежать длительных зависаний \
-                             при Internet Censorship (по умолчанию значение выставлено 9с)" 
+                             при неполадках в сети (по умолчанию значение выставлено 5с)" 
                         )
     parser.add_argument("--found-print", "-f", 
                         action="store_true", dest="print_found_only", default=False,
@@ -630,7 +711,8 @@ def main():
                         help="""✓Монохромный терминал, не использовать цвета в url\n
                                 ✓Отключить звук\n
                                 ✓Запретить открытие web browser-а\n
-                                ✓Отключить вывод на печать для флагов стран"""
+                                ✓Отключить вывод на печать флагов стран
+                                ✓Отключить индикацию и статус прогресса"""
                         )
     parser.add_argument("username",
                         nargs='+', metavar='USERNAMES',
@@ -639,17 +721,17 @@ def main():
                         )
     parser.add_argument("--userload", "-u", metavar='',
                         action="store", dest="user", default=False,
-                        help="Указать файл со списком user-ов. Пример_Linux: 'python3 snoop.py -u ~/list.txt start'\n"
-                             "Пример для Windows: 'python snoop.py -u c:\snoop\list.txt start'"
+                        help="Указать файл со списком user-ов. Пример_Linux: 'python3 snoop.py -u ~/listusers.txt start'\n"
+                             "Пример для Windows: 'python snoop.py -u c:\snoop\listusers.txt start'"
                         )                        
     parser.add_argument("--list all",
                         action="store_true", dest="listing",
-                        help="Вывести на печать информацию о базе данных Snoop"
+                        help="Вывести на печать информацию о локальной базе данных Snoop"
                         )
     parser.add_argument("--country", "-c",
                         action="store_true", dest="country", default=False,
                         help="Сортировка 'вывода на печать/запись_результатов' по странам, а не по алфавиту"
-                        )                        
+                        )
     parser.add_argument("--save-report", "-S",
                         action="store_true", dest="reports", default=False,
                         help="Сохранять найденные странички пользователей в локальные файлы"
@@ -661,14 +743,18 @@ def main():
 
     args = parser.parse_args()
 
+   
 # Информативный вывод:
+# Опция  '-w'.
+    if args.web:
+        print(Fore.CYAN + "[+] активирована опция '-w': «подключение к внешней web_database»")
 # Опция  '-S'.
     if args.reports:
         print(Fore.CYAN + "[+] активирована опция '-S': «сохранять странички найденных аккаунтов»")
 
 # Опция  '-n'.
     if args.no_func:
-        print(Fore.CYAN + "[+] активирована опция '-n': «отключены:: цвета; звук; флаги; браузер»")
+        print(Fore.CYAN + "[+] активирована опция '-n': «отключены:: цвета; звук; флаги; браузер; прогресс»")
 
 # Опция  '-t'.
     try:
@@ -680,8 +766,7 @@ def main():
 # Сортировка по странам '-с'.
     if args.country:
         patchjson = ("{}".format(args.json_file))
-        raw = open(patchjson, "r", encoding="utf-8")
-        jsonjson = json.load(raw)        
+        jsonjson = fff()
         print(Fore.CYAN + "[+] активирована опция '-c': «сортировка/запись в HTML результатов по странам»")
         site_country = dict(jsonjson)
         country_sites = sorted(jsonjson, key=lambda k: ("country" not in k, jsonjson[k].get("country", sys.maxsize)))
@@ -704,205 +789,164 @@ def main():
         print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»")
         networktest.nettest()
 
-# Опция сортировки.
-    if args.sort:
-        sorting.sorts()
-        sys.exit(0)
 
 # Опция '--list all'.
-# Общий вывод стран (3!).
     if args.listing:
+        from rich.console import Console
+        from rich.table import Table
+
         if sys.platform == 'win32':
-            sortY = str(input("Сортировать БС Snoop по странам или по имени сайта ?\nпо странам — 1 по имени — 2 all — 3\n"))
+            sortY = str(input("Сортировать БС Snoop по странам, по имени сайта или обобщенно ?\nпо странам — 1 по имени — 2 all — 3\n"))
         else:
-            sortY = str(input("\033[36mСортировать БС Snoop по странам или по имени сайта ?\n" + \
-            "по странам —\033[0m 1 \033[36mпо имени —\033[0m 2 \033[36mall —\033[0m 3\n"))
+            sortY = str(input("\033[36mСортировать БС Snoop по странам, по имени сайта или обобщенно ?\n" + \
+            "по странам —\033[0m 1 \033[36mпо имени —\033[0m 2 \033[36mall —\033[0m 3\n" + \
+            "\033[36mВыберите действие...\033[0m\n"))
+# Общий вывод стран (3!).
         if sortY == "3":
             print(Fore.CYAN + "========================\nOk, print All Country:\n")
-            with open("data.json", "r", encoding="utf8") as contry0:
-                datajson0 = json.load(contry0)
-                cnt0 = Counter()
-                li0 = []
-                for con0 in datajson0:
-                    if sys.platform == 'win32':
-                        aaa0 = datajson0.get(con0).get("country_klas")
-                    else:
-                        aaa0 = datajson0.get(con0).get("country")
-                    li0.append(aaa0)
-                for word0 in li0:
-                    cnt0[word0] += 1
-                flag_str0=str(cnt0)
-                try:
-                    flag_str_sum0 = (flag_str0.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
-                except:
-                    pass
+            datajson0 = fff()
+            cnt0 = Counter()
+            li0 = []
+            for con0 in datajson0:
                 if sys.platform == 'win32':
-                    print(Style.BRIGHT + Fore.GREEN + flag_str_sum0 + Style.BRIGHT + Fore.CYAN + 
-                    "\n\n+++All_" + str(len(datajson0)) + "_Websites+++")
+                    aaa0 = datajson0.get(con0).get("country_klas")
                 else:
-                    print(Style.BRIGHT + Fore.GREEN + flag_str_sum0 + Style.BRIGHT + Fore.CYAN + 
-                    "\n\n⚡️All_" + str(len(datajson0)) + "_Websites⚡️")
-                sys.exit(0)
+                    aaa0 = datajson0.get(con0).get("country")
+                li0.append(aaa0)
+            for word0 in li0:
+                cnt0[word0] += 1
+            flag_str0=str(cnt0)
+            try:
+                flag_str_sum0 = (flag_str0.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
+            except:
+                pass
+            table = Table(title = Style.BRIGHT + Fore.RED + "Snoop Demo Version" + Style.RESET_ALL, style="green")
+            table.add_column("Страна:Кол-во websites", style="magenta")
+            table.add_column("All", style="cyan", justify='full')
+            table.add_row(flag_str_sum0, str(len(datajson0)))
+            console = Console()
+            console.print(table)
+# Вывод для full Version
+            datajson00 = kkk()
+            cnt00 = Counter()
+            li00 = []
+            for con00 in datajson00:
+                if sys.platform == 'win32':
+                    aaa00 = datajson00.get(con00).get("country_klas")
+                else:
+                    aaa00 = datajson00.get(con00).get("country")
+                li00.append(aaa00)
+            for word00 in li00:
+                cnt00[word00] += 1
+            flag_str00=str(cnt00)
+            try:
+                flag_str_sum00 = (flag_str00.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
+            except:
+                pass
+            table = Table(title = Style.BRIGHT + Fore.GREEN + "Snoop Full Version" + Style.RESET_ALL, style="green")
+            table.add_column("Страна:Кол-во websites", style="magenta")
+            table.add_column("All", style="cyan", justify='full')
+            table.add_row(flag_str_sum00, str(len(datajson00)))
+            console = Console()
+            console.print(table)
+            sys.exit(0)
 
 # Сортируем по алфавиту (2!).
-# Сортировка для ОС Win.
+# Сортировка для ОС Win Full Version.
         elif sortY == "2":
+            print(Fore.CYAN + "========================\nOk, сортируем по алфавиту:\n")
+            print(Fore.GREEN + "++Белый список Full Version++")
+            datajson = kkk()
+            i = 0
             if sys.platform == 'win32':
-                print(Fore.CYAN + "========================\nOk, сортируем по алфавиту:\n")
-                print(Fore.GREEN + "++Белый список++")
-                with open("data.json", "r", encoding="utf8") as contry:
-                    datajson = json.load(contry)
-                    i = 0
-                    for con in datajson:
-                        aaa = datajson.get(con).get("country_klas")
-                        i += 1
-                        print(f"{i}.", Fore.CYAN + f"{aaa}  {con}")
-# Общий результат БС Win.
-                listallsortFlag = []
-                with open('websites.md', "r", encoding="utf8") as listyes:
-                    for site in listyes.readlines():
-                        patch = (site.split('[')[0]).replace(" ", "")
-                        patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
-                        listallsortFlag.append(patch1)
-                        goba = sorted(listallsortFlag)
-                    print(Fore.CYAN + "================\n")
-                    print(Fore.CYAN + "Wr =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "RU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "US =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "Kb =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "GB =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "DE =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "AU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "CZ =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "CA =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "FR =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇫🇷 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "...")
-                    sys.exit(0)
-# Сортировка для ОС GNU.
+                for con in datajson:
+                    aaa = datajson.get(con).get("country_klas")
+                    i += 1
+                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
+                    print(Fore.CYAN + "================")
+# Сортировка для ОС GNU Full Version..
             else:
-                print(Fore.CYAN + "========================\nOk, сортируем по алфавиту:\n")
-                print(Fore.GREEN + "++Белый список++")                
-                listall = []
-                with open('websites.md', "r", encoding="utf8") as listyes:
-                    for site in listyes.readlines():
-                        patch = (site.split(']')[0]).replace("[", " ")
-                        listall.append(patch)
-
-                    narezka=listall[1:]
-                    for zzz in (narezka):
-                        print(Fore.CYAN + str(zzz))
-
-                listallsortFlag = []
-                with open('websites.md', "r", encoding="utf8") as listyes:
-                    for site in listyes.readlines():
-                        patch = (site.split('[')[0]).replace(" ", "")
-                        patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
-                        listallsortFlag.append(patch1)
-                        goba = sorted(listallsortFlag)
-
-                listall_bad = []
-                with open('bad_site.md', "r", encoding="utf8") as listbad:
-                    for site_bad in listbad.readlines():
-                        patch_bad = (site_bad.split(']')[0]).replace("[", " ")
-                        listall_bad.append(patch_bad)
-                    print(Fore.RED + "\n--Чёрный список--", *listall_bad[1:], sep = "\n")
-
-                print("================\n")
-                print(Fore.CYAN + "🌎 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇷🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇺🇸 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🏁 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇬🇧 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇩🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇦🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇨🇿 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇨🇦 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇫🇷 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇫🇷 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "...")
-                sys.exit(0)
+                for con in datajson:
+                    aaa = datajson.get(con).get("country")
+                    i += 1
+                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
+                    print(Fore.CYAN + "================")        
+# Сортировка для ОС Win Demo Version.
+            print(Fore.GREEN + "\n++Белый список Demo Version++")
+            datajson = fff()
+            i = 0
+            if sys.platform == 'win32':
+                for con in datajson:
+                    aaa = datajson.get(con).get("country_klas")
+                    i += 1
+                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
+                    print(Fore.CYAN + "================")
+# Сортировка для ОС GNU Demo Version.
+            else:
+                for con in datajson:
+                    aaa = datajson.get(con).get("country")
+                    i += 1
+                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
+                    print(Fore.CYAN + "================")        
+            sys.exit(0)
 
 # Сортируем по странам (1!).
-# Сортировка для ОС Win.
+# Сортировка для ОС Win Full Version.
         elif sortY == "1":
             if sys.platform == 'win32':
                 listwindows = []
-                with open("data.json", "r", encoding="utf8") as contry:
-                    datajson = json.load(contry)
-                    for con in datajson:
-                        aaa = (datajson.get(con).get("country_klas"))
-                        listwindows.append(f"{aaa}  {con}\n")
-                    sort_spisok=sorted(listwindows)
-                    print(Fore.CYAN + "========================\nOk, сортируем по странам:\n")
-                    print(Fore.GREEN + "++Белый список++")
-                    for i, numerlist in enumerate(sort_spisok):
-                        fd=(i + 1)
-                        print(f"{fd}.", Fore.CYAN + f"{numerlist}",end = '')
-# Общий результат БС Win.
-                listallsortFlag = []
-                with open('websites.md', "r", encoding="utf8") as listyes:
-                    for site in listyes.readlines():
-                        patch = (site.split('[')[0]).replace(" ", "")
-                        patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
-                        listallsortFlag.append(patch1)
-                        goba = sorted(listallsortFlag)
-                    print(Fore.CYAN + "================\n")
-                    print(Fore.CYAN + "Wr =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "RU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "US =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "Kb =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "GB =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "DE =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "AU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "CZ =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "CA =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "FR =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇫🇷 ')}", Fore.CYAN + "сайт(а/ов)!")
-                    print(Fore.CYAN + "...")
-                    sys.exit(0)
-# Сортировка для ОС GNU.
-            else:
+                datajson = kkk()
+                for con in datajson:
+                    aaa = (datajson.get(con).get("country_klas"))
+                    listwindows.append(f"{aaa}  {con}\n")
+                sort_spisok=sorted(listwindows)
                 print(Fore.CYAN + "========================\nOk, сортируем по странам:\n")
-                listall = []
-                with open('websites.md', "r", encoding="utf8") as listyes:
-                    for site in listyes.readlines():
-                        patch = (site.split(']')[0]).replace("[", " ")
-                        patch1 = str(patch.split('.')[1:]).replace("[", "").replace("]", " ").replace("'", "")
-                        listall.append(patch1)
-                        sortlistall = sorted(listall)
-                    print(Fore.GREEN + "++Белый список++")
-
-                    narezka=sortlistall[1:]
-                    for i, numerlist in enumerate(narezka):
-                        fd=(i + 1)
-                        print(Fore.CYAN + str(fd) + str(numerlist))
-
-                listallsortFlag = []
-                with open('websites.md', "r", encoding="utf8") as listyes:
-                    for site in listyes.readlines():
-                        patch = (site.split('[')[0]).replace(" ", "")
-                        patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
-                        listallsortFlag.append(patch1)
-                        goba = sorted(listallsortFlag)
-
-                listall_bad = []
-                with open('bad_site.md', "r", encoding="utf8") as listbad:
-                    for site_bad in listbad.readlines():
-                        patch_bad = (site_bad.split(']')[0]).replace("[", " ")
-                        listall_bad.append(patch_bad)
-                    print(Fore.RED + "\n--Чёрный список--", *listall_bad[1:], sep = "\n")
-
-                print("================\n")
-                print(Fore.CYAN + "🌎 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇷🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇺🇸 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🏁 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇬🇧 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇩🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇦🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇨🇿 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇨🇦 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "🇫🇷 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇫🇷 ')}", Fore.CYAN + "сайт(а/ов)!")
-                print(Fore.CYAN + "...")
-                sys.exit(0)
+                print(Fore.GREEN + "++Белый список Full Version++")
+                for i, numerlist in enumerate(sort_spisok):
+                    i += 1
+                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
+                    print(Fore.CYAN + "================") 
+# Сортировка для ОС GNU Full Version.
+            else:
+                listlinux = []
+                datajson = kkk()
+                for con in datajson:
+                    aaa = (datajson.get(con).get("country"))
+                    listlinux.append(f"{aaa}  {con}\n")
+                sort_spisok=sorted(listlinux)
+                print(Fore.CYAN + "========================\nOk, сортируем по странам:\n")
+                print(Fore.GREEN + "++Белый список Full Version++")
+                for i, numerlist in enumerate(sort_spisok):
+                    i += 1
+                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
+                    print(Fore.CYAN + "================") 
+# Сортировка для ОС Win Demo Version.
+            if sys.platform == 'win32':
+                listwindows = []
+                datajson = fff()
+                for con in datajson:
+                    aaa = (datajson.get(con).get("country_klas"))
+                    listwindows.append(f"{aaa}  {con}\n")
+                sort_spisok=sorted(listwindows)
+                print(Fore.GREEN + "\n++Белый список Demo Version++")
+                for i, numerlist in enumerate(sort_spisok):
+                    i += 1
+                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
+                    print(Fore.CYAN + "================") 
+# Сортировка для ОС GNU Demo Version..
+            else:
+                listlinux = []
+                datajson = fff()
+                for con in datajson:
+                    aaa = (datajson.get(con).get("country"))
+                    listlinux.append(f"{aaa}  {con}\n")
+                sort_spisok=sorted(listlinux)
+                print(Fore.GREEN + "\n++Белый список Demo Version++")
+                for i, numerlist in enumerate(sort_spisok):
+                    i += 1
+                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
+                    print(Fore.CYAN + "================") 
+            sys.exit(0)
 # Действие не выбрано.
         else:
             print(Style.BRIGHT + Fore.RED + "Извините, но вы не выбрали действие\nвыход")
@@ -911,6 +955,12 @@ def main():
 # Опция донат '-d y'.
     if args.donation:
         print(donate)
+        print("                                                                              ||\n",
+              Fore.CYAN + f"Ограничения Demo Version: {flagBS} Websites (Database Snoop сокращена в > 19 раз); ||\n"
+              f"отключены некоторые опции; необновляемая и не поддерживаемая Database_Snoop.  ||\n"
+              f"Snoop Full Version: 1100+ Websites; поддержка и обновление Database Snoop.    ||\n"
+	      	  f"\033[36;1mПодключение к Web_Database Snoop (online), которая расширяется/обновляется.   ||\033[0m\n"
+              f"===============================================================================\n")
         webbrowser.open("https://yasobe.ru/na/snoop_project")
         print(Style.BRIGHT + Fore.RED + "Выход")
         sys.exit(0)
@@ -930,7 +980,7 @@ def main():
                 print("\033[31;1mНе могу найти_прочитать!\033[0m \033[36mПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
                 print("\033[36mПо умолчанию блокнот в OS Windows сохраняет текст в кодировке — ANSI\033[0m")
                 print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8]")
-                print("\033[36mИли удалите из словаря нечитаемые символы, в т.ч. и кириллицу.")
+                print("\033[36mИли удалите из словаря нечитаемые символы.")
                 sys.exit(0)
         print(Fore.CYAN + f"[+] активирована опция '-u': «розыск user-ов из файла: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
         print(Fore.CYAN + "    Будем искать:" + f" {userlist[:3]}" + " и других..." + Style.RESET_ALL)
@@ -946,24 +996,35 @@ def main():
     response_json_online = None
     site_data_all = None
 
-    data_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), args.json_file)
-    altjson = ("{}".format(args.json_file))
+    baseput = ("{}".format(args.json_file))
+#    print(baseput) #проверка пути базы
 
-# Работа с JSON.
+# Работа с базой.
     if site_data_all is None:
 # Проверить, существует ли альтернативная база данных, иначе выход.
-        if not os.path.exists(data_file_path):
-            print("\033[31;1mJSON file не существует.\033[0m")
-            print("\033[31;1mВы не добавили '.json'_файл.\033[0m")
+        if not os.path.exists(baseput):
+            print("\033[31;1mФайла базы не существует.\033[0m")
             sys.exit(0)
         else:
-            raw = open(data_file_path, "r", encoding="utf-8")
             try:
-                site_data_all = json.load(raw)
-                print(Fore.CYAN + f"\nзагружена база: {altjson.split('/')[-1]}:: " + 
-                Style.BRIGHT + Fore.CYAN + f"{len(site_data_all)}" + "_Websites" + Style.RESET_ALL)
+                a1 = fff()
             except:
-                print("\033[31;1mInvalid загружаемый JSON file.\033[0m")
+                print("\033[31;1mНеподдерживаемый формат базы данных\033[0m")
+        try:
+            if args.web == False:
+                site_data_all = a1
+                print(Fore.CYAN + f"\nзагружена локальная база: " + 
+                Style.BRIGHT + Fore.CYAN + f"{len(site_data_all)}" + "_Websites" + Style.RESET_ALL)
+        except:
+            print("\033[31;1mInvalid загружаемая база данных.\033[0m")
+
+# Опция '-w'
+    if args.web:
+        print("\n\033[37m\033[44m{}".format("Функция действует только для пользователей Full version..."))
+        print(donate)
+        print("\033[31mВыход\033[0m")
+        webbrowser.open("https://yasobe.ru/na/snoop_project")
+        sys.exit(0)
 
     if args.site_list is None:
 # Не желательно смотреть на подмножество сайтов.
@@ -1042,7 +1103,7 @@ def main():
                     exists_counter += 1
                     file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
             file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
-            file.write("\n" f"База Snoop: " + str(flagBS) + " Websites.")
+            file.write("\n" f"База Snoop (DemoVersion): " + str(flagBS) + " Websites.")
             file.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")      
             print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
             print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + "results/*/" + str(username) + ".*")
@@ -1058,7 +1119,7 @@ def main():
             <div id='particles-js'></div>\n\
             <div id='report'>\n\n\
             <h1><a class='GL' href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>\n")
-            file.write("""\t\t\t<h3>Snoop Project</h3>
+            file.write("""\t\t\t<h3>Snoop Project (Demo Version)</h3>
             <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
             file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
@@ -1084,7 +1145,7 @@ def main():
                 pass
             file.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
-            file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
+            file.write("<br> База Snoop (DemoVersion): <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i><br><br>\n")
             file.write("""
     <script>
@@ -1180,7 +1241,7 @@ def main():
                                  '--------------------------------------------------------',
                                  '-------------', '-----------------', '--------------------------------', 
                                  '-------------', '-----------------------»'])
-                writer.writerow(['База_Snoop=' + str(flagBS) + '_Websites'])
+                writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
                 writer.writerow('')
                 writer.writerow(['Дата'])
                 writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
@@ -1246,7 +1307,7 @@ def main():
                     exists_counter += 1
                     file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
             file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
-            file.write("\n" f"База Snoop: " + str(flagBS) + " Websites.")
+            file.write("\n" f"База Snoop (DemoVersion): " + str(flagBS) + " Websites.")
             file.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
             print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
             print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + "results/*/" + str(username) + ".*")
@@ -1263,7 +1324,7 @@ def main():
             <div id='particles-js'></div>\n\
             <div id='report'>\n\n\
             <h1><a class='GL' href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>\n")
-            file.write("""\t\t\t<h3>Snoop Project</h3>
+            file.write("""\t\t\t<h3>Snoop Project (Demo Version)</h3>
             <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
             file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
@@ -1289,7 +1350,7 @@ def main():
                 pass
             file.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
-            file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
+            file.write("<br> База Snoop (DemoVersion): <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i><br><br>\n")
             file.write("""
     <script>
@@ -1386,7 +1447,7 @@ def main():
                                  '--------------------------------------------------------',
                                  '-------------', '-----------------', '--------------------------------',
                                  '-------------', '-----------------------»'])
-                writer.writerow(['База_Snoop=' + str(flagBS) + '_Websites'])
+                writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
                 writer.writerow('')
                 writer.writerow(['Дата'])
                 writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
@@ -1410,5 +1471,6 @@ def main():
             playsound('end.wav')
         except:
             pass
+
 if __name__ == "__main__":
     main()

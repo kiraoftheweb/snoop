@@ -13,6 +13,11 @@ Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com>
 использования или с использованием служебного положения без письменного
 согласия автора запрещена.
 
+Snoop Project Demo Version — это версия имеет ограниченный набор функций и
+урезанную базу данных поиска по сравнению с Full Version более чем в 19 раз.
+КАК ПОЛУЧИТЬ 'SNOOP FULL VERSION' СМОТРИТЕ (Команда):
+python3 snoop.py --donate y
+
 Двоичный код Программного Обеспечения (не исходная форма) может лицензироваться
 по аналогичной или измененной форме предоставляемой лицензии.
 Настоящая лицензия может быть изменена в новых версиях Программного Обеспечения
@@ -72,6 +77,9 @@ Copyright (c) 2018 Isaac Muse
 
 This software uses playsound library, which is
 Copyright (c) 2016 Taylor Marks <taylor@marksfam.com>
+
+This software uses Rich library, which is
+Copyright 2020 Will McGugan
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -178,6 +186,7 @@ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR
 OTHER DEALINGS IN THE SCHEMA.
 ================================================================================
+
 Stylesheet for extracting Schematron information from a RELAX-NG schema. Based 
 on the stylesheet for extracting Schematron information from W3C XML Schema.
 Created by Eddie Robertsson 2002/06/01
