@@ -45,19 +45,19 @@ _____/ _|  _|\___/ \___/  .__/
 """)
 
 if sys.platform == 'win32':
-	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
+	print (Fore.CYAN + "#Example:" + Style.RESET_ALL)
 	print (Fore.CYAN + " cd с:\snoop" + Style.RESET_ALL)	
-	print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
-	print (Fore.CYAN + " python snoop.py username" + Style.RESET_ALL, "#поиск user-a")
+	print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#reference")
+	print (Fore.CYAN + " python snoop.py username" + Style.RESET_ALL, "#Search user-a")
 	print (Fore.CYAN + "============================================\n" + Style.RESET_ALL)
 else:
-	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
+	print (Fore.CYAN + "#Example:" + Style.RESET_ALL)
 	print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
-	print (Fore.CYAN + " python3 snoop.py --help" + Style.RESET_ALL, "#справка")
-	print (Fore.CYAN + " python3 snoop.py username" + Style.RESET_ALL, "#поиск user-a")
+	print (Fore.CYAN + " python3 snoop.py --help" + Style.RESET_ALL, "#reference")
+	print (Fore.CYAN + " python3 snoop.py username" + Style.RESET_ALL, "#Example user-a")
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
-module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
+module_name = (Fore.CYAN + "Snoop: nickname search on all fronts!" + Style.RESET_ALL)
 version = "1.2.1_rus Snoop (source demo)"
 
 dirresults = os.getcwd()
@@ -77,7 +77,7 @@ def fff():
             bbb1 = json.loads(s12) 
             return bbb1
     except:
-        print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
+        print(Style.BRIGHT + Fore.RED + "Oops, something went wrong..." + Style.RESET_ALL)
         sys.exit(0)
 
 def kkk():
@@ -92,7 +92,7 @@ def kkk():
             ccc1 = json.loads(s112) 
             return ccc1
     except:
-        print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
+        print(Style.BRIGHT + Fore.RED + "Oops, something went wrong..." + Style.RESET_ALL)
         sys.exit(0)
 
 # Флаг БС
@@ -158,7 +158,7 @@ def print_error(err, errstr, var, verbose=False, color=True):
         print(f"[-] {errstr} {err if verbose else var}")
 
 
-# Вывод на печать на разных платформах.
+# Printing on different platforms.
 if sys.platform == 'win32':
     def print_found_country(social_network, url, countryB, response_time=False, verbose=False, color=True):
         if color:
@@ -198,7 +198,7 @@ def print_invalid(mes, social_network, message, color=True):
         print(f"[-] {social_network} {message}")
 
 def print_invalid2(mes, social_network, message, color=True):
-    """Ошибка вывода результата verbose"""
+    """Error output result verbose"""
     if color:
         print((Fore.RED + ".............[" +
             Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL +
@@ -225,7 +225,7 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
     except requests.exceptions.Timeout as errt:
         print_error(errt, "Timeout ошибка:", social_network, verbose, color)
     except requests.exceptions.RequestException as err:
-        print_error(err, "Ошибка раскладки клавиатуры/*символов", social_network, verbose, color)
+        print_error(err, "Keyboard layout error / * characters", social_network, verbose, color)
     return None, "", -1
 
 def snoop(username, site_data, verbose=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
@@ -238,7 +238,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
             errdata=line[:-1]
             ermail.append(errdata)
     if any(ermail in username for ermail in ermail):
-        print(Style.BRIGHT + Fore.RED + "\nE-mail адрес будет обрезан до валидного состояния")
+        print(Style.BRIGHT + Fore.RED + "\nE-mail the address will be shorten to a valid state")
         username = username.rsplit(sep='@', maxsplit=1)[0]
 
     with open('specialcharacters', 'r', encoding="utf-8") as errspec:
@@ -252,21 +252,21 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
     if any(ernumber in username[0:2] for ernumber in ernumber):
         if len(username) >= 10 and len(username) <= 13:
             if username.isdigit() == True:
-                print(Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
+                print(Style.BRIGHT + Fore.RED + "\nSnoop tracks user accounts, but not phone numbers...")
                 sys.exit(0)
     elif username[0] == "+" or username[0] == ".":
-        print (Style.BRIGHT + Fore.RED + "\nПубличный логин, начинающийся с такого символа, практически всегда невалидный...")
+        print (Style.BRIGHT + Fore.RED + "\nPublic login starting with such a character is almost always invalid...")
         sys.exit(0)
     elif username[0] == "9" and len(username) == 10 and username.isdigit() == True:
-        print (Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
+        print (Style.BRIGHT + Fore.RED + "\nSnoop tracks user accounts, but not phone numbers...")
         sys.exit(0)
 
 # Печать первой инфостроки.
     if '%20' in username:
         usernameA = re.sub("%20", " ", username)
-        print_info("разыскиваем:", usernameA, color)
+        print_info("looking for:", usernameA, color)
     else:
-        print_info("разыскиваем:", username, color)
+        print_info("wanted:", username, color)
 
 # Создать сеанс на основе методологии запроса.
     underlying_session = requests.session()
@@ -318,7 +318,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
         if exclusionYES and re.search(exclusionYES, username):
 # Не нужно делать проверку на сайте: если это имя пользователя не допускается.
             if not print_found_only:
-                print_invalid("", social_network, f"Недопустимый формат имени для данного сайта", color)
+                print_invalid("", social_network, f"Invalid name format for this site", color)
 
             results_site["exists"] = "прочерк"
             results_site["url_user"] = ""
@@ -486,7 +486,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
             else:
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
-                exists = "увы"
+                exists = "oh :("
 
 # Проверка, 4 методов; #3.
 # Проверяет, является ли код состояния ответа 2..
@@ -515,20 +515,20 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
                     print_found_country(social_network, url, countryA, response_time, verbose, color)
                 if reports:
                     sreports()
-                exists = "найден!"
+                exists = "found!"
             else:
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
-                exists = "увы"
+                exists = "oh :("
 #            print(r.text) #Проверка ответа
 
 # Если все 4 метода не сработали, например, из-за ошибки доступа (красный) или из-за каптчи (желтый)
         else:
             if not print_found_only and verbose == False:
-                print_invalid("", social_network, "*ПРОПУСК", color)
+                print_invalid("", social_network, "*PASS", color)
             elif not print_found_only and verbose == True:
-                print_invalid2("", social_network, "*ПРОПУСК", color)    
-            exists = "блок"
+                print_invalid2("", social_network, "*PASS", color)    
+            exists = "block"
 
 # Считать тайминги приближенно.
         ello = float(time.time() - timestart)
@@ -553,27 +553,27 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
             if verbose == True:
                 if color == False:
                     if print_found_only == True:
-                        if exists == "найден!" or exists == "блок":
+                        if exists == "Found!" or exists == "block":
                             print(f"[*{time_site} ms ответ]" + \
                             f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
                     else:
-                        print(f"[*{time_site} ms ответ]" + \
+                        print(f"[*{time_site} ms response]" + \
                         f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
                 if color == True:
                     if print_found_only == True:
-                        if exists == "найден!" or exists == "блок":
+                        if exists == "Found!" or exists == "block":
                             if dif > 5:
-                                print(Style.BRIGHT + Fore.RED + f"[**{time_site} ms ответ]"
+                                print(Style.BRIGHT + Fore.RED + f"[**{time_site} ms response]"
                                 f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
                             else:
-                                print(Style.BRIGHT + Fore.CYAN + f"[**{time_site} ms ответ]" + \
+                                print(Style.BRIGHT + Fore.CYAN + f"[**{time_site} ms response]" + \
                                 f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
                     else:
                         if dif > 5:
-                            print(Style.BRIGHT + Fore.RED + f"[**{time_site} ms ответ]" + \
+                            print(Style.BRIGHT + Fore.RED + f"[**{time_site} ms response]" + \
                             f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
                         else:
-                            print(Style.BRIGHT + Fore.CYAN + f"[**{time_site} ms ответ]" + \
+                            print(Style.BRIGHT + Fore.CYAN + f"[**{time_site} ms response]" + \
                             f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
 
 # Служебная информация для CSV.
@@ -591,7 +591,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
         results_site['check_time_ms'] = time_site
         results_site['response_time_ms'] = round(float(ello*1000))
         if response_time_site_ms*1000 < 250:
-            results_site['response_time_site_ms'] = "нет"
+            results_site['response_time_site_ms'] = "no"
         else:
             results_site['response_time_site_ms'] = round(float(response_time_site_ms*1000))
 # Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
@@ -605,35 +605,35 @@ def timeout_check(value):
         global timeout
         timeout = int(value)
     except:
-        raise ArgumentTypeError(f"\n\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время в 'секундах'. \033[0m")
+        raise ArgumentTypeError(f"\n\033[31;1mTimeout '{value}' Err,\033[0m \033[36indicate time in 'seconds'. \033[0m")
     if timeout <= 0:
-        raise ArgumentTypeError(f"\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время > 0sec. \033[0m")
+        raise ArgumentTypeError(f"\033[31;1mTimeout '{value}' Err,\033[0m \033[36indicate time > 0sec. \033[0m")
     return timeout
 
 
 # Обновление Snoop.
 def update_snoop():
     if sys.platform == 'win32':
-        upd = str(input("""Вы действительно хотите:
+        upd = str(input("""Do you really want:
                     __             _  
    ._  _| _._|_ _  (_ ._  _  _ ._   ) 
 |_||_)(_|(_| |_(/_ __)| |(_)(_)|_) o  
    |                           |    
-нажмите 'y' """))
+enter 'y' """))
     else:
-        upd = str(input("""\033[36mВы действительно хотите:
+        upd = str(input("""\033[36mВы Do you want:
                     __             _  
    ._  _| _._|_ _  (_ ._  _  _ ._   ) 
 |_||_)(_|(_| |_(/_ __)| |(_)(_)|_) o  
    |                           |    
-нажмите\033[0m 'y' """))
+enter\033[0m 'y' """))
 
     if upd == "y":
         if sys.platform == 'win32':
-            print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS Windows")
+            print(Fore.RED + "Snoop update function requires installation <Git> на OS Windows")
             os.startfile("update.bat")
         else:
-            print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS GNU/Linux")
+            print(Fore.RED + "Snoop update function requires installation <Git> на OS GNU/Linux")
             os.system("./update.sh")
 
 
@@ -648,38 +648,12 @@ def main():
                      f"\033[36m%(prog)s: {version}\033[36m\n" +  \
                      f"\033[36mOS: {platform.platform(aliased=True, terse=0)}\033[36m\n" + \
                      f"\033[36mPython: {platform.python_version()}\033[36m\n\n"
-                     
-
-
-# Пожертвование.
-    donate = ("""
-Snoop Demo Version
-===============================================================================    
-╭donate:                                                                      ||
-├──BTC_BHC: \033[37m1EXoQj1rd5oi54k9yynVLsR4kG61e4s8g3\033[0m                                ||
-├──Яндекс.Деньги: \033[37m4100111364257544\033[0m                                            ||
-└──PayPal: \033[37msnoopproject@protonmail.com\033[0m                                        ||
-                                                                              ||
-Если вас заинтересовала Snoop Demo Version, Вы можете получить                ||
-\033[36mSnoop Full Version\033[0m, поддержав развитие проекта 20$ = 1200р.                   ||
-При пожертвовании в сообщении укажите информацию в таком порядке:             ||
-    '\033[36mПожертвование: 20$ ваш e-mail\033[0m'                                           ||
-    "\033[36mFull Version for Windows", или "Full Version for Linux\033[0m"                  ||
-В ближайшее время на почту придёт ссылка на скачивание Snoop Full Version.    ||
-                                                                              ||
-Если Snoop требуется вам для служебных или образовательных задач,             ||
-напишите письмо на e-mail разработчика в свободной форме.                     ||
-\033[36msnoopproject@protonmail.com\033[0m                                                   ||
-===============================================================================
-Исходный код: \033[37mhttps://github.com/snooppr/snoop\033[0m                                ||""")
-
-                
 # Назначение опций Snoop.
     parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
                             description=f"{module_name} (Version {version})",
                             epilog=(Fore.CYAN + f"Snoop " + Style.BRIGHT + Fore.RED + f"Demo Version "+ Style.RESET_ALL + \
                             Fore.CYAN + f"поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n"  + Fore.CYAN +
-                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1100+\033[0m \033[36mWebsites!!!\033[0m\n\n")
+                            f"Snoop \033[36;1mFull Version\033[0m \033[36msupport: \033[36;1m1100+\033[0m \033[36mWebsites!!!\033[0m\n\n")
                             )
     parser.add_argument("--donate y", "-d y",
                         action="store_true", dest="donation",
